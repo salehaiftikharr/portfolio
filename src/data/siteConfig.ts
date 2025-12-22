@@ -9,8 +9,8 @@ export const siteConfig: SiteConfig = {
   phone: "+1 (718) 551 5561",
   location: "Gettysburg, PA",
   social: {
-    github: "https://github.com/salehaiftikhar",
-    linkedin: "https://linkedin.com/in/salehaiftikhar",
+    github: "https://github.com/salehaiftikharr",
+    linkedin: "https://www.linkedin.com/in/salehaiftikharr/",
   },
   resumeUrl: "/resume.pdf",
 };
