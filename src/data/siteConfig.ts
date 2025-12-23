@@ -4,7 +4,7 @@ export const siteConfig: SiteConfig = {
   name: "Saleha Iftikhar",
   title: "Software Engineer",
   description:
-    "Senior Computer Science student at Gettysburg College with production-level experience building real-time trading platforms and healthcare applications. Passionate about creating scalable software solutions that make a meaningful impact.",
+    "I am a senior CS student at Gettysburg College who loves building software that actually helps people. When I am not coding, you will find me lifting at the gym or experimenting with new baking recipes. I thrive on collaboration and genuinely enjoy working with others to bring ideas to life.",
   email: "iftisa01@gettysburg.edu",
   phone: "+1 (718) 551 5561",
   location: "Gettysburg, PA",

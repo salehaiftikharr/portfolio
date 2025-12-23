@@ -15,7 +15,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-primary font-mono text-sm mb-4"
+            className="text-primary font-mono text-lg mb-4"
           >
             Hi, my name is
           </motion.p>
