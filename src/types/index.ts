@@ -12,7 +12,7 @@ export interface Project {
     live?: string;
     github?: string;
   };
-  image?: string;
+  images?: string[];
   duration: string;
   teamSize?: number;
 }

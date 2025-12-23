@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { ExternalLink, Github, Users } from "lucide-react";
 import { Card } from "./Card";
 import { Badge } from "./Badge";
+import { ImageCarousel } from "./ImageCarousel";
 import { Project } from "@/types";
 import { motion } from "framer-motion";
 
@@ -12,6 +14,10 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
+  const [showAllTech, setShowAllTech] = useState(false);
+  const visibleTech = showAllTech ? project.techStack : project.techStack.slice(0, 5);
+  const hasMoreTech = project.techStack.length > 5;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -20,10 +26,11 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       viewport={{ once: true }}
     >
       <Card gradient className="h-full flex flex-col">
-        {/* Project Image Placeholder */}
-        <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 rounded-lg mb-4 flex items-center justify-center border border-border">
-          <span className="text-muted text-sm">Project Preview</span>
-        </div>
+        {/* Project Images Carousel */}
+        <ImageCarousel
+          images={project.images || []}
+          alt={project.title}
+        />
 
         {/* Header */}
         <div className="flex items-start justify-between gap-2 mb-2">
@@ -46,13 +53,20 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
         {/* Tech Stack */}
         <div className="flex flex-wrap gap-1.5 mb-4">
-          {project.techStack.slice(0, 5).map((tech) => (
+          {visibleTech.map((tech) => (
             <Badge key={tech} variant="outline">
               {tech}
             </Badge>
           ))}
-          {project.techStack.length > 5 && (
-            <Badge variant="outline">+{project.techStack.length - 5}</Badge>
+          {hasMoreTech && (
+            <button
+              onClick={() => setShowAllTech(!showAllTech)}
+              className="cursor-pointer"
+            >
+              <Badge variant="outline" className="hover:bg-primary/10 transition-colors">
+                {showAllTech ? "Show less" : `+${project.techStack.length - 5}`}
+              </Badge>
+            </button>
           )}
         </div>
 
@@ -77,7 +91,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               className="flex items-center gap-1.5 text-muted hover:text-foreground transition-colors text-sm"
             >
               <ExternalLink size={16} />
-              <span>Live Demo</span>
+              <span>Website</span>
             </a>
           )}
           <span className="ml-auto text-xs text-muted">{project.duration}</span>

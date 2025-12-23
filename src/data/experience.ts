@@ -2,6 +2,21 @@ import { Experience, LeadershipItem } from "@/types";
 
 export const experiences: Experience[] = [
   {
+    id: "impact-rehab",
+    title: "Team Lead & Developer",
+    company: "Impact Rehab",
+    location: "Gettysburg, PA",
+    duration: "Aug 2025 - Dec 2025",
+    type: "work",
+    description: [
+      "Led a 3-member team through full SDLC execution for a physiotherapy management application",
+      "Engineered automated MSK score calculations and streamlined patient data workflows",
+      "Implemented secure authentication, session management, and real-time analytics with Chart.js",
+      "Maintained continuous client communication with a Virginia-based physiotherapy practice to gather requirements and feedback",
+    ],
+    techStack: ["PHP", "MySQL", "JavaScript", "Chart.js"],
+  },
+  {
     id: "tone-core",
     title: "Software Engineer Intern",
     company: "The Tone Core (Stealth Startup)",
@@ -33,7 +48,7 @@ export const experiences: Experience[] = [
     id: "duke",
     title: "Digital Engagement Analyst",
     company: "Duke Children's Hospital",
-    location: "Durham, NC",
+    location: "Remote",
     duration: "Aug 2023 - Dec 2023",
     type: "work",
     description: [
@@ -61,7 +76,7 @@ export const leadership: LeadershipItem[] = [
     organization: "Gettysburg College",
     duration: "Aug 2025 - Present",
     description:
-      "Conducting undergraduate research in science and innovation as part of a competitive fellowship program.",
+      "Researching how science advances through diverse innovation pipelines and analyzing how government, academic, and industry groups prioritize financial investments.",
   },
   {
     id: "student-life",
