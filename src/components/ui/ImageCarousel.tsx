@@ -23,7 +23,7 @@ export function ImageCarousel({ images, alt }: ImageCarouselProps) {
   if (images.length === 0) {
     return (
       <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 rounded-lg mb-4 flex items-center justify-center border border-border">
-        <span className="text-muted text-sm">Project Preview</span>
+        <span className="text-muted text-sm">Preview Coming Soon</span>
       </div>
     );
   }
