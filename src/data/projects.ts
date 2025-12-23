@@ -19,7 +19,7 @@ export const projects: Project[] = [
       "Secure authentication & session management",
     ],
     links: {
-      github: "https://github.com/salehaiftikhar/impact-rehab",
+      github: "https://github.com/PTP0411/Impact-Rehab",
       live: "https://impactrehab.co/",
     },
     images: [
@@ -49,7 +49,7 @@ export const projects: Project[] = [
       "Secure admin interface",
     ],
     links: {
-      github: "https://github.com/salehaiftikhar/eangus-directory",
+      github: "https://github.com/salehaiftikharr/EANGUS-Directory",
       live: "https://eangus.org/",
     },
     images: [
@@ -76,7 +76,7 @@ export const projects: Project[] = [
       "RESTful API architecture",
     ],
     links: {
-      github: "https://github.com/salehaiftikhar/fuerza",
+      github: "https://github.com/salehaiftikharr/fuerza",
     },
     images: [
       "/fuerza_explore.png",
@@ -112,7 +112,7 @@ export const projects: Project[] = [
       "Docker containerization & Kamal deployments",
     ],
     links: {
-      github: "https://github.com/salehaiftikhar/tone-core",
+      github: "https://github.com/the-tone-app/the-tone-core",
     },
     duration: "May 2025 - Aug 2025",
   },
