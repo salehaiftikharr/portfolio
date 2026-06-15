@@ -16,15 +16,31 @@ export function About() {
           subtitle="A recent CS grad who builds autonomous agents and software that ships"
         />
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="max-w-3xl mx-auto text-center text-muted text-lg leading-relaxed mb-12"
-        >
-          {siteConfig.about}
-        </motion.p>
+        <div className="flex flex-col items-center gap-8 md:flex-row md:items-center max-w-4xl mx-auto mb-14">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="shrink-0"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/profile.jpg"
+              alt="Saleha Iftikhar"
+              className="w-44 md:w-52 aspect-[4/5] rounded-2xl object-cover object-top border border-border shadow-lg"
+            />
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="text-muted text-lg leading-relaxed text-center md:text-left"
+          >
+            {siteConfig.about}
+          </motion.p>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Education Card */}
