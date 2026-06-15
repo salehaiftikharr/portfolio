@@ -13,7 +13,7 @@ export function About() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="About Me"
-          subtitle="Senior CS student passionate about building impactful software"
+          subtitle="A recent CS grad who builds autonomous agents and software that ships"
         />
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -39,7 +39,7 @@ export function About() {
                 Minors: {education.minors.join(", ")}
               </p>
               <p className="text-sm text-primary font-medium">
-                Expected: {education.graduationDate}
+                Graduated: {education.graduationDate}
               </p>
             </Card>
           </motion.div>

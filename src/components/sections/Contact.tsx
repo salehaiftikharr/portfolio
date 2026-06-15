@@ -24,21 +24,37 @@ export function Contact() {
     setErrorMessage("");
 
     try {
-      const response = await fetch("/api/contact", {
+      // Web3Forms: a no-backend form-to-email service. The access key is
+      // public by design (it only allows submitting this form), so it lives in
+      // a NEXT_PUBLIC_ env var.
+      const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+      if (!accessKey) throw new Error("Contact form is not configured.");
+
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: `Portfolio message from ${formData.name}`,
+          from_name: "Portfolio Contact Form",
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to send message");
+      const data = await response.json();
+      if (!data.success) {
+        throw new Error(data.message || "Failed to send message");
       }
 
       setStatus("success");
       setFormData({ name: "", email: "", message: "" });
     } catch {
       setStatus("error");
-      setErrorMessage("Failed to send message. Please try again or email me directly.");
+      setErrorMessage(
+        `Couldn't send the message. Please email me directly at ${siteConfig.email}.`,
+      );
     }
   };
 
@@ -175,6 +191,16 @@ export function Contact() {
                       </>
                     )}
                   </Button>
+
+                  <p className="text-center text-xs text-muted">
+                    Prefer email? Reach me directly at{" "}
+                    <a
+                      href={`mailto:${siteConfig.email}`}
+                      className="text-primary hover:underline"
+                    >
+                      {siteConfig.email}
+                    </a>
+                  </p>
                 </form>
               )}
             </Card>

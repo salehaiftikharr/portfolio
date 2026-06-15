@@ -14,23 +14,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Saleha Iftikhar | Software Engineer",
+  title: "Saleha Iftikhar | AI-Native Engineer",
   description:
-    "Software Engineer with full-stack experience in Rails, React, and Python. Senior CS student at Gettysburg College with production-level experience building real-time trading platforms and healthcare applications.",
+    "AI-native engineer and recent Computer Science graduate from Gettysburg College. I build autonomous agents and full-stack products — from a fleet of \"minions\" that open verified pull requests to chat-native BI tools.",
   keywords: [
-    "software engineer",
+    "AI engineer",
+    "AI agents",
+    "Claude API",
+    "LLM evaluation",
     "full-stack developer",
-    "Ruby on Rails",
-    "React",
+    "TypeScript",
+    "Next.js",
     "Python",
-    "data science",
     "Gettysburg College",
   ],
   authors: [{ name: "Saleha Iftikhar" }],
   openGraph: {
-    title: "Saleha Iftikhar | Software Engineer",
+    title: "Saleha Iftikhar | AI-Native Engineer",
     description:
-      "Building scalable software solutions with modern technologies",
+      "Building autonomous agents and full-stack products that ship.",
     type: "website",
   },
 };

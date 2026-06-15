@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code, Layers, Database, Wrench, BarChart3 } from "lucide-react";
+import { Code, Layers, Database, Wrench, BarChart3, Sparkles } from "lucide-react";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -10,6 +10,7 @@ import { skills, skillCategories } from "@/data/skills";
 const iconMap = {
   Code: Code,
   Layers: Layers,
+  Sparkles: Sparkles,
   Database: Database,
   Wrench: Wrench,
   BarChart: BarChart3,

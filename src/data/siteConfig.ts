@@ -2,9 +2,9 @@ import { SiteConfig } from "@/types";
 
 export const siteConfig: SiteConfig = {
   name: "Saleha Iftikhar",
-  title: "Software Engineer",
+  title: "AI-Native Engineer",
   description:
-    "I am a senior CS student at Gettysburg College who loves building software that actually helps people. When I am not coding, you will find me lifting at the gym or experimenting with new baking recipes. I thrive on collaboration and genuinely enjoy working with others to bring ideas to life.",
+    "I'm an AI-native engineer and a recent Computer Science graduate from Gettysburg College who builds autonomous agents and full-stack products that ship — from a fleet of \"minions\" that open verified pull requests to chat-native BI tools. I care about software that actually helps people, and about building it with the rigor to trust it. When I'm not coding, you'll find me lifting at the gym or experimenting with new baking recipes.",
   email: "iftisa01@gettysburg.edu",
   phone: "+1 (718) 551 5561",
   location: "Gettysburg, PA",
