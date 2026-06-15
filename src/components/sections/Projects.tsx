@@ -12,7 +12,7 @@ export function Projects() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Featured Projects"
-          subtitle="A selection of projects I've built, from production apps to academic work"
+          subtitle="A selection of projects I have built, from production apps to academic work"
         />
 
         <div className="grid md:grid-cols-2 gap-6">

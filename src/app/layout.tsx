@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Saleha Iftikhar | AI-Native Engineer",
   description:
-    "AI-native engineer and recent Computer Science graduate from Gettysburg College. I build autonomous agents and full-stack products — from a fleet of \"minions\" that open verified pull requests to chat-native BI tools.",
+    "AI-native engineer and recent Computer Science graduate from Gettysburg College. I build autonomous agents and full-stack products, from a fleet of \"minions\" that open verified pull requests to chat-native business intelligence tools.",
   keywords: [
     "AI engineer",
     "AI agents",

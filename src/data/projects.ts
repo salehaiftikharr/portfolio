@@ -8,9 +8,9 @@ export const projects: Project[] = [
     type: "personal",
     featured: true,
     description:
-      'An agent that builds agents — plus a fleet of autonomous "minions" that fix GitHub & Linear issues and open verified pull requests, dispatched from Slack.',
+      'An agent that builds agents, plus a fleet of autonomous "minions" that fix GitHub and Linear issues and open verified pull requests, dispatched from Slack.',
     longDescription:
-      'A TypeScript system built on the Claude API. Describe an automation in plain English and Forge generates, tests, and self-repairs a runnable agent. On top of it, autonomous "minions" pick up a GitHub or Linear issue, fix it on a sandboxed clone of the repo, run the test suite, and open a real pull request — but only when the fix passes with no regressions; otherwise they decline. A verification eval over a labeled ticket set measured zero unsafe ships (it never shipped work it should have declined). You dispatch minions by messaging a Slack bot.',
+      'A TypeScript system built on the Claude API. You describe an automation in plain English and Forge generates, tests, and self-repairs a runnable agent. On top of it, autonomous "minions" pick up a GitHub or Linear issue, fix it on a sandboxed clone of the repo, run the test suite, and open a real pull request, but only when the fix passes with no regressions. Otherwise they decline. A verification eval over a labeled ticket set measured zero unsafe ships, meaning the minions never shipped work they should have declined. You dispatch them by messaging a Slack bot.',
     techStack: [
       "TypeScript",
       "Claude API",
@@ -23,9 +23,9 @@ export const projects: Project[] = [
     ],
     highlights: [
       "Autonomous agents that open verified pull requests",
-      "Self-repair loop: test → fix → re-test, with receipts",
-      "Verification eval: 0 unsafe ships on a labeled set",
-      "Dispatched from Slack; works with GitHub & Linear",
+      "A self-repairing loop that tests, fixes, and retests",
+      "Verification eval with zero unsafe ships on a labeled set",
+      "Dispatched from Slack, working with GitHub and Linear",
     ],
     links: {
       github: "https://github.com/salehaiftikharr/agent-forge",
@@ -39,9 +39,9 @@ export const projects: Project[] = [
     type: "personal",
     featured: true,
     description:
-      "A chat-native BI tool: natural-language questions become validation-gated SQL, streamed back as charts and KPI cards — with a swap-in Claude/GPT provider.",
+      "A chat-native business intelligence tool where natural-language questions become validation-gated SQL, streamed back as charts and KPI cards, with a swap-in Claude or GPT provider.",
     longDescription:
-      "A chat-native business-intelligence tool where an LLM turns natural-language questions into a single validation-gated read-only SQL SELECT, runs it through a locked-down Postgres role, and streams the result back as charts and KPI cards. The model provider is a one-line seam (Claude or GPT), and a 25-case eval harness grades the agent's answers on the data they actually return — it caught a model silently changing a revenue definition. Fully dockerized.",
+      "A chat-native business-intelligence tool where an LLM turns natural-language questions into a single validation-gated read-only SQL SELECT, runs it through a locked-down Postgres role, and streams the result back as charts and KPI cards. The model provider is a one-line seam, either Claude or GPT, and a 25-case eval harness grades the agent's answers on the data they actually return. It caught a model silently changing a revenue definition. Fully dockerized.",
     techStack: [
       "Next.js",
       "TypeScript",
@@ -52,10 +52,10 @@ export const projects: Project[] = [
       "LLM Evals",
     ],
     highlights: [
-      "Natural language → validation-gated SQL → live charts",
-      "Swap-in Claude/GPT provider seam",
+      "Natural-language questions become validation-gated SQL and live charts",
+      "Swap-in Claude or GPT provider seam",
       "25-case eval harness on the production agent pipeline",
-      "Read-only DB role + SQL safety validation",
+      "Read-only database role with SQL safety validation",
     ],
     links: {
       github: "https://github.com/salehaiftikharr/analytics-chat-assistant",
@@ -83,27 +83,6 @@ export const projects: Project[] = [
       github: "https://github.com/salehaiftikharr/application_tracker",
     },
     duration: "Mar 2026 - May 2026",
-  },
-  {
-    id: "data-viz-portfolio",
-    title: "Data Visualization Portfolio",
-    role: "Data Analyst",
-    type: "academic",
-    featured: true,
-    description:
-      "Python data-analysis and visualization projects exploring women in tech, programming-language trends, and wage disparities.",
-    longDescription:
-      "A portfolio of data-analysis and visualization projects built with Python — cleaning and merging real datasets, then telling clear visual stories about women in tech, programming-language trends, and wage disparities using Pandas, Matplotlib, and Plotly.",
-    techStack: ["Python", "Pandas", "Matplotlib", "Plotly", "Jupyter"],
-    highlights: [
-      "End-to-end data cleaning, merging, and analysis",
-      "Interactive visualizations with Plotly",
-      "Stories on women in tech & wage disparities",
-    ],
-    links: {
-      github: "https://github.com/salehaiftikharr/DataVisualizationPortfolio",
-    },
-    duration: "2024",
   },
   {
     id: "impact-rehab",
@@ -219,26 +198,5 @@ export const projects: Project[] = [
       github: "https://github.com/the-tone-app/the-tone-core",
     },
     duration: "May 2025 - Aug 2025",
-  },
-  {
-    id: "art-history-timeline",
-    title: "Digital Art History Timeline",
-    role: "Creator",
-    type: "academic",
-    featured: true,
-    description:
-      "An interactive JavaFX desktop app that visualizes the evolution of digital art, with searchable events, detail popups, and images.",
-    longDescription:
-      "A JavaFX desktop application that lets users explore the history of digital art through an interactive timeline — navigating key events, opening detail popups with images and descriptions, and searching for specific moments. Built with a focus on a clean, intuitive interface.",
-    techStack: ["Java", "JavaFX"],
-    highlights: [
-      "Interactive timeline UI",
-      "Searchable events with detail popups",
-      "Clean, intuitive desktop interface",
-    ],
-    links: {
-      github: "https://github.com/salehaiftikharr/javaFX-ArtHistoryTimeLine",
-    },
-    duration: "2024",
   },
 ];

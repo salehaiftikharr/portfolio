@@ -4,8 +4,8 @@ export const siteConfig: SiteConfig = {
   name: "Saleha Iftikhar",
   title: "AI-Native Engineer",
   description:
-    "I'm an AI-native engineer and a recent Computer Science graduate from Gettysburg College who builds autonomous agents and full-stack products that ship — from a fleet of \"minions\" that open verified pull requests to chat-native BI tools. I care about software that actually helps people, and about building it with the rigor to trust it. When I'm not coding, you'll find me lifting at the gym or experimenting with new baking recipes.",
-  email: "iftisa01@gettysburg.edu",
+    "I am an AI-native engineer and a recent Computer Science graduate from Gettysburg College. I build autonomous agents and full-stack products that ship, from a fleet of \"minions\" that open verified pull requests to chat-native business intelligence tools. I care about software that genuinely helps people, and about building it with the rigor to trust it. When I am not coding, you will find me lifting at the gym or experimenting with new baking recipes.",
+  email: "salehaiftikharrrr@gmail.com",
   phone: "+1 (718) 551 5561",
   location: "Gettysburg, PA",
   social: {
