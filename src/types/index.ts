@@ -45,7 +45,10 @@ export interface LeadershipItem {
 export interface SiteConfig {
   name: string;
   title: string;
+  /** Short, punchy one-liner for the hero. */
   description: string;
+  /** Longer, personable bio for the About section. */
+  about: string;
   email: string;
   phone?: string;
   location: string;

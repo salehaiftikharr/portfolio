@@ -5,7 +5,7 @@ import { GraduationCap, Award, BookOpen } from "lucide-react";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { education } from "@/data/siteConfig";
+import { education, siteConfig } from "@/data/siteConfig";
 
 export function About() {
   return (
@@ -15,6 +15,16 @@ export function About() {
           title="About Me"
           subtitle="A recent CS grad who builds autonomous agents and software that ships"
         />
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="max-w-3xl mx-auto text-center text-muted text-lg leading-relaxed mb-12"
+        >
+          {siteConfig.about}
+        </motion.p>
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Education Card */}
