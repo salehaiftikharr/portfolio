@@ -53,6 +53,8 @@ export interface SiteConfig {
   description: string;
   /** Longer, personable bio for the About section, one entry per paragraph. */
   about: string[];
+  /** Conversational "Ask Me Anything" pairs for the About section. */
+  faqs: { question: string; answer: string }[];
   email: string;
   phone?: string;
   location: string;

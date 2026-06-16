@@ -5,6 +5,7 @@ import { GraduationCap, Award, BookOpen } from "lucide-react";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { education, siteConfig } from "@/data/siteConfig";
 
 export function About() {
@@ -12,17 +13,17 @@ export function About() {
     <section id="about" className="py-20 bg-background-alt/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          title="About Me"
-          subtitle="A recent CS grad who builds autonomous agents and software that ships"
+          title="Ask Me Anything"
+          subtitle="The questions I get most, answered honestly"
         />
 
-        <div className="flex flex-col items-center gap-8 md:flex-row md:items-center max-w-4xl mx-auto mb-14">
+        <div className="flex flex-col items-center gap-10 md:flex-row md:items-start max-w-5xl mx-auto mb-14">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="shrink-0"
+            className="shrink-0 md:sticky md:top-24"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -36,11 +37,9 @@ export function About() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="space-y-4 text-muted text-lg leading-relaxed text-center md:text-left"
+            className="w-full flex-1"
           >
-            {siteConfig.about.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
+            <FaqAccordion items={siteConfig.faqs} />
           </motion.div>
         </div>
 
