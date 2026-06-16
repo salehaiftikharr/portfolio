@@ -84,6 +84,11 @@ export const projects: Project[] = [
     links: {
       github: "https://github.com/salehaiftikharr/application_tracker",
     },
+    images: [
+      "/app-tracker-dashboard.png",
+      "/app-tracker-autofill.png",
+      "/app-tracker-signin.png",
+    ],
     duration: "Mar 2026 - May 2026",
   },
   {
