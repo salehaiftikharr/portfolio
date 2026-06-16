@@ -47,8 +47,8 @@ export interface SiteConfig {
   title: string;
   /** Short, punchy one-liner for the hero. */
   description: string;
-  /** Longer, personable bio for the About section. */
-  about: string;
+  /** Longer, personable bio for the About section, one entry per paragraph. */
+  about: string[];
   email: string;
   phone?: string;
   location: string;

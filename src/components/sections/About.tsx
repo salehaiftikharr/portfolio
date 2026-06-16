@@ -31,15 +31,17 @@ export function About() {
               className="w-44 md:w-52 aspect-[4/5] rounded-2xl object-cover object-top border border-border shadow-lg"
             />
           </motion.div>
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-muted text-lg leading-relaxed text-center md:text-left"
+            className="space-y-4 text-muted text-lg leading-relaxed text-center md:text-left"
           >
-            {siteConfig.about}
-          </motion.p>
+            {siteConfig.about.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+          </motion.div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
