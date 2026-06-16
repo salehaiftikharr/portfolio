@@ -16,6 +16,7 @@ const navLinks = [
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +25,32 @@ export function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Highlight the nav link for whichever section is currently in view.
+  useEffect(() => {
+    const ids = navLinks.map((link) => link.href.slice(1));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveSection(entry.target.id);
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px" },
+    );
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
+
+  const linkClass = (href: string) =>
+    cn(
+      "transition-colors text-sm",
+      activeSection === href.slice(1)
+        ? "text-primary-glow"
+        : "text-muted hover:text-foreground",
+    );
 
   return (
     <header
@@ -46,11 +73,7 @@ export function Header() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-muted hover:text-foreground transition-colors text-sm"
-              >
+              <a key={link.href} href={link.href} className={linkClass(link.href)}>
                 {link.label}
               </a>
             ))}
