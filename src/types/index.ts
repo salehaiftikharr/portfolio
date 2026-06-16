@@ -13,6 +13,10 @@ export interface Project {
     github?: string;
   };
   images?: string[];
+  /** Optional looping demo video shown as the card cover; takes priority over images. */
+  video?: string;
+  /** Optional poster frame shown before the video loads. */
+  poster?: string;
   duration: string;
   teamSize?: number;
 }

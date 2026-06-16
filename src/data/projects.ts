@@ -60,6 +60,8 @@ export const projects: Project[] = [
     links: {
       github: "https://github.com/salehaiftikharr/analytics-chat-assistant",
     },
+    video: "/aca-demo.mp4",
+    poster: "/aca-demo-poster.jpg",
     duration: "Mar 2026 - May 2026",
   },
   {

@@ -35,6 +35,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
   const visibleTech = showAllTech ? project.techStack : project.techStack.slice(0, 5);
   const hasMoreTech = project.techStack.length > 5;
   const hasImages = !!project.images && project.images.length > 0;
+  const hasVideo = !!project.video;
   const Icon = coverIcon[project.id] ?? FolderGit2;
 
   return (
@@ -46,8 +47,20 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       className="group"
     >
       <Card gradient className="h-full flex flex-col">
-        {/* Cover: screenshot carousel, or themed gradient art for image-less projects */}
-        {hasImages ? (
+        {/* Cover: demo video, then screenshot carousel, then themed gradient art */}
+        {hasVideo ? (
+          <video
+            src={project.video}
+            poster={project.poster}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-label={`${project.title} demo`}
+            className="w-full aspect-video object-contain rounded-lg border border-border bg-background-alt mb-4"
+          />
+        ) : hasImages ? (
           <ImageCarousel images={project.images!} alt={project.title} />
         ) : (
           <div className="relative aspect-video mb-4 overflow-hidden rounded-lg border border-border bg-gradient-to-br from-primary/25 via-accent/10 to-background-alt">
