@@ -19,6 +19,16 @@ export const dataProjects: DataProject[] = [
     year: "2024",
   },
   {
+    id: "movie-trends",
+    title: "Movie Trends Analysis",
+    description:
+      "A collaborative analysis of a dataset of the top 10,000 movies. It cleans and merges sources into one dataset, then surfaces trends through exploratory analysis and visualization.",
+    techStack: ["Python", "Pandas", "Jupyter", "Data Cleaning"],
+    github: "https://github.com/aryamasharma/DataScience325-FinalProject",
+    year: "2026",
+    note: "team project",
+  },
+  {
     id: "ds311-recreate-remix",
     title: "Recreate and Remix, Developer Wages",
     description:
