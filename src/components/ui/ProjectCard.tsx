@@ -1,7 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { ExternalLink, Github, Users } from "lucide-react";
+import {
+  ExternalLink,
+  Github,
+  Users,
+  Bot,
+  BarChart3,
+  Chrome,
+  FolderGit2,
+  type LucideIcon,
+} from "lucide-react";
 import { Card } from "./Card";
 import { Badge } from "./Badge";
 import { ImageCarousel } from "./ImageCarousel";
@@ -13,10 +22,20 @@ interface ProjectCardProps {
   index: number;
 }
 
+// Cover icon for projects that do not ship a screenshot, so their card reads as
+// intentional rather than empty.
+const coverIcon: Record<string, LucideIcon> = {
+  "forge-minions": Bot,
+  "analytics-chat-assistant": BarChart3,
+  "application-tracker": Chrome,
+};
+
 export function ProjectCard({ project, index }: ProjectCardProps) {
   const [showAllTech, setShowAllTech] = useState(false);
   const visibleTech = showAllTech ? project.techStack : project.techStack.slice(0, 5);
   const hasMoreTech = project.techStack.length > 5;
+  const hasImages = !!project.images && project.images.length > 0;
+  const Icon = coverIcon[project.id] ?? FolderGit2;
 
   return (
     <motion.div
@@ -24,21 +43,42 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
+      className="group"
     >
       <Card gradient className="h-full flex flex-col">
-        {/* Project Images Carousel */}
-        <ImageCarousel
-          images={project.images || []}
-          alt={project.title}
-        />
+        {/* Cover: screenshot carousel, or themed gradient art for image-less projects */}
+        {hasImages ? (
+          <ImageCarousel images={project.images!} alt={project.title} />
+        ) : (
+          <div className="relative aspect-video mb-4 overflow-hidden rounded-lg border border-border bg-gradient-to-br from-primary/25 via-accent/10 to-background-alt">
+            <div
+              className="absolute inset-0 opacity-[0.12]"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle, var(--color-primary-glow) 1px, transparent 1px)",
+                backgroundSize: "14px 14px",
+              }}
+            />
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
+              <Icon
+                className="text-primary-glow transition-transform duration-300 group-hover:scale-110"
+                size={42}
+                strokeWidth={1.5}
+              />
+              <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-muted">
+                {project.type === "personal" ? "Personal Project" : project.title}
+              </span>
+            </div>
+          </div>
+        )}
 
         {/* Header */}
         <div className="flex items-start justify-between gap-2 mb-2">
-          <h3 className="text-lg font-semibold text-foreground">
+          <h3 className="text-lg font-semibold text-foreground group-hover:text-primary-glow transition-colors">
             {project.title}
           </h3>
           {project.teamSize && (
-            <div className="flex items-center gap-1 text-muted text-xs">
+            <div className="flex items-center gap-1 text-muted text-xs shrink-0">
               <Users size={14} />
               <span>{project.teamSize}</span>
             </div>
@@ -59,10 +99,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             </Badge>
           ))}
           {hasMoreTech && (
-            <button
-              onClick={() => setShowAllTech(!showAllTech)}
-              className="cursor-pointer"
-            >
+            <button onClick={() => setShowAllTech(!showAllTech)} className="cursor-pointer">
               <Badge variant="outline" className="hover:bg-primary/10 transition-colors">
                 {showAllTech ? "Show less" : `+${project.techStack.length - 5}`}
               </Badge>
@@ -77,7 +114,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               href={project.links.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-muted hover:text-foreground transition-colors text-sm"
+              className="flex items-center gap-1.5 text-muted hover:text-primary-glow transition-colors text-sm"
             >
               <Github size={16} />
               <span>Code</span>
@@ -88,7 +125,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               href={project.links.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-muted hover:text-foreground transition-colors text-sm"
+              className="flex items-center gap-1.5 text-muted hover:text-primary-glow transition-colors text-sm"
             >
               <ExternalLink size={16} />
               <span>Website</span>
