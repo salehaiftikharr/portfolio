@@ -1,16 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  /* Minimalist purple dark theme */
-  --background: #09070d;
-  --background-alt: #110f18;
-  --foreground: #f4f2f7;
-  --muted: #a099ad;
-  --primary: #a78bfa;
-  --primary-glow: #c4b5fd;
-  --border: #1f1b29;
-  --accent: #8b5cf6;
-  --accent-glow: #a78bfa;
+  /* Soft off-white and baby pink theme.
+     Note: on a light background, emphasis reads DARKER, so primary-glow is a
+     deeper rose than primary (the opposite of a dark theme). */
+  --background: #fff7fb;       /* off-white with a whisper of pink */
+  --background-alt: #fde9f1;   /* soft baby pink: cards and alternating sections */
+  --foreground: #3f1d2e;       /* deep plum, warm and very readable */
+  --muted: #8a5a6e;            /* muted mauve for secondary text */
+  --primary: #db2777;          /* rose: links, buttons, icons */
+  --primary-glow: #9d174d;     /* deeper rose for hover and emphasis */
+  --border: #f6d3e3;           /* soft pink border */
+  --accent: #f472b6;           /* baby pink for decorative gradients */
+  --accent-glow: #f9a8d4;      /* lightest baby pink for glows */
 }
 
 @theme inline {
@@ -38,7 +40,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar for dark theme */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -59,5 +61,5 @@ html {
 /* Selection color */
 ::selection {
   background: var(--primary);
-  color: var(--foreground);
+  color: #ffffff;
 }

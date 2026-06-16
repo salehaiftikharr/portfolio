@@ -19,7 +19,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           size === "lg" && "px-6 py-3 text-base",
           // Style variants
           variant === "primary" &&
-            "bg-gradient-to-r from-primary to-accent text-white hover:from-primary-glow hover:to-primary hover:shadow-lg hover:shadow-primary/25",
+            "bg-gradient-to-r from-primary to-primary-glow text-white hover:from-primary-glow hover:to-primary hover:shadow-lg hover:shadow-primary/25",
           variant === "secondary" &&
             "bg-background-alt text-foreground hover:bg-border",
           variant === "outline" &&
