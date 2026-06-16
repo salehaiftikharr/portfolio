@@ -37,7 +37,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-2xl sm:text-3xl md:text-4xl font-bold text-muted mb-6"
           >
-            AI-Native Engineer
+            AI-Native Engineer | Agent Builder | Full-Stack Developer
           </motion.h2>
 
           {/* Description */}
