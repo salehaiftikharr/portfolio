@@ -52,20 +52,36 @@ export const education = {
   minors: ["Data Science", "Mathematics"],
   graduationDate: "May 2026",
   awards: [
-    { name: "Eisenhower Scholar" },
     {
-      name: "Keith Pappas Memorial Award (Fall 2025)",
+      name: "Eisenhower Scholar",
       description:
-        "Awarded to a student whose quality of participation and contributions most significantly shape the life of the Gettysburg College community.",
+        "Gettysburg College's most selective merit award, for outstanding leadership, civic engagement, and community impact.",
     },
     {
-      name: "Linnaean Award (Spring 2026)",
+      name: "Keith Pappas Memorial Award",
+      term: "Fall 2025",
       description:
-        "Recognizes an outstanding senior for academic excellence, efforts to improve the campus community, and overall achievement.",
+        "Given to the student whose participation and contributions most shape the life of the College community.",
     },
-    { name: "Dean's Honors List" },
-    { name: "Dean's Commendation List" },
-    { name: "Pi Mu Epsilon Member (Mathematics Honor Society)" },
+    {
+      name: "Linnaean Award",
+      term: "Spring 2026",
+      description:
+        "Honors an outstanding senior for academic excellence and efforts to improve the campus community.",
+    },
+    {
+      name: "Dean's Honors List",
+      description: "Semester standing for a grade point average of 3.60 or higher.",
+    },
+    {
+      name: "Dean's Commendation List",
+      description: "Semester standing for a grade point average between 3.30 and 3.59.",
+    },
+    {
+      name: "Pi Mu Epsilon",
+      description:
+        "Invitation-only membership in the national mathematics honor society for excellence in mathematics.",
+    },
   ],
   relevantCourses: [
     "Data Structures & Algorithms",

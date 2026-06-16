@@ -1,12 +1,33 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, Award, BookOpen } from "lucide-react";
+import {
+  GraduationCap,
+  Award,
+  BookOpen,
+  Trophy,
+  Users,
+  Sparkles,
+  Star,
+  BadgeCheck,
+  Sigma,
+  type LucideIcon,
+} from "lucide-react";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { education, siteConfig } from "@/data/siteConfig";
+
+// A distinct icon per honor keeps the grid lively instead of a wall of bullets.
+const awardIcon: Record<string, LucideIcon> = {
+  "Eisenhower Scholar": Trophy,
+  "Keith Pappas Memorial Award": Users,
+  "Linnaean Award": Sparkles,
+  "Dean's Honors List": Star,
+  "Dean's Commendation List": BadgeCheck,
+  "Pi Mu Epsilon": Sigma,
+};
 
 export function About() {
   return (
@@ -43,75 +64,93 @@ export function About() {
           </motion.div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Education Card */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <Card gradient className="h-full">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 rounded-lg bg-primary/10">
-                  <GraduationCap className="text-primary" size={24} />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground">Education</h3>
-              </div>
-              <h4 className="text-lg font-medium text-foreground mb-1">
-                {education.school}
-              </h4>
-              <p className="text-muted mb-2">{education.degree}</p>
-              <p className="text-sm text-muted mb-4">
-                Minors: {education.minors.join(", ")}
-              </p>
-              <p className="text-sm text-primary font-medium">
-                Graduated: {education.graduationDate}
-              </p>
-            </Card>
-          </motion.div>
-
-          {/* Awards Card */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <Card className="h-full">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 rounded-lg bg-primary/10">
-                  <Award className="text-primary" size={24} />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground">
-                  Honors & Awards
-                </h3>
-              </div>
-              <ul className="space-y-2.5">
-                {education.awards.map((award) => (
-                  <li key={award.name} className="flex gap-2.5 text-muted">
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                    <span>
-                      <span className="text-foreground">{award.name}</span>
-                      {"description" in award && award.description && (
-                        <span className="block text-sm text-muted mt-0.5">
-                          {award.description}
-                        </span>
-                      )}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </Card>
-          </motion.div>
-
-          {/* Relevant Courses Card */}
+        <div className="space-y-6">
+          {/* Education — a compact, full-width banner */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="md:col-span-2"
+          >
+            <Card gradient>
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-2.5 rounded-lg bg-primary/10 shrink-0">
+                    <GraduationCap className="text-primary" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground">
+                      {education.school}
+                    </h3>
+                    <p className="text-muted text-sm mt-0.5">
+                      {education.degree}
+                      <span className="text-muted/70">
+                        {" "}· Minors in {education.minors.join(" & ")}
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <span className="px-3 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium whitespace-nowrap">
+                  Graduated {education.graduationDate}
+                </span>
+              </div>
+            </Card>
+          </motion.div>
+
+          {/* Honors & Awards — a balanced grid of mini-cards */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.05 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex items-center gap-3 mb-5">
+              <div className="p-2 rounded-lg bg-primary/10">
+                <Award className="text-primary" size={24} />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground">Honors &amp; Awards</h3>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {education.awards.map((award) => {
+                const Icon = awardIcon[award.name] ?? Award;
+                const term = "term" in award ? award.term : undefined;
+                return (
+                  <div
+                    key={award.name}
+                    className="rounded-xl border border-border bg-background-alt p-4 h-full transition-colors hover:border-primary/40"
+                  >
+                    <div className="flex items-start gap-2.5">
+                      <div className="mt-0.5 p-1.5 rounded-md bg-primary/10 shrink-0">
+                        <Icon className="text-primary" size={15} />
+                      </div>
+                      <div>
+                        <div className="flex items-baseline gap-2 flex-wrap">
+                          <h4 className="font-medium text-foreground leading-snug">
+                            {award.name}
+                          </h4>
+                          {term && (
+                            <span className="text-[11px] uppercase tracking-wide text-muted">
+                              {term}
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-sm text-muted mt-1 leading-snug">
+                          {award.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </motion.div>
+
+          {/* Relevant Coursework */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
           >
             <Card gradient>
               <div className="flex items-center gap-3 mb-4">
