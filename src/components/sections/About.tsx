@@ -86,11 +86,18 @@ export function About() {
                   Honors & Awards
                 </h3>
               </div>
-              <ul className="space-y-2">
+              <ul className="space-y-2.5">
                 {education.awards.map((award) => (
-                  <li key={award} className="flex items-center gap-2 text-muted">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                    {award}
+                  <li key={award.name} className="flex gap-2.5 text-muted">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                    <span>
+                      <span className="text-foreground">{award.name}</span>
+                      {"description" in award && award.description && (
+                        <span className="block text-sm text-muted mt-0.5">
+                          {award.description}
+                        </span>
+                      )}
+                    </span>
                   </li>
                 ))}
               </ul>
