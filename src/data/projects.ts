@@ -30,6 +30,8 @@ export const projects: Project[] = [
     links: {
       github: "https://github.com/salehaiftikharr/agent-forge",
     },
+    video: "/minion-demo.mp4",
+    poster: "/minion-demo-poster.jpg",
     duration: "Jun 2026",
   },
   {
