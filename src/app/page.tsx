@@ -4,6 +4,7 @@ import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Projects } from "@/components/sections/Projects";
+import { MinionConsole } from "@/components/sections/MinionConsole";
 import { DataViz } from "@/components/sections/DataViz";
 import { Skills } from "@/components/sections/Skills";
 import { Experience } from "@/components/sections/Experience";
@@ -19,6 +20,7 @@ export default function Home() {
         <Hero />
         <About />
         <Projects />
+        <MinionConsole />
         <DataViz />
         <Skills />
         <Experience />
