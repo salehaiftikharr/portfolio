@@ -178,34 +178,4 @@ export const projects: Project[] = [
     ],
     duration: "Jan 2025 - May 2025",
   },
-  {
-    id: "tone-core",
-    title: "The Tone Core",
-    role: "Software Engineer Intern",
-    type: "professional",
-    featured: true,
-    description:
-      "A real-time trading platform built with Rails 8 and Hotwire, enabling users to execute trades with instant UI updates.",
-    longDescription:
-      "Developed core features for a production Rails 8 + Hotwire trading platform, enabling real-time trades, user management, and live notifications. Streamlined UX with Tailwind CSS and optimized multi-step trade flows to reduce friction and boost engagement. Contributed to agile development with GitHub, Docker, and PostgreSQL; wrote RSpec tests, enforced RuboCop, and supported Kamal deployments.",
-    techStack: [
-      "Ruby on Rails 8",
-      "Hotwire",
-      "PostgreSQL",
-      "Docker",
-      "Kamal",
-      "Tailwind CSS",
-      "RSpec",
-    ],
-    highlights: [
-      "Production-deployed trading platform",
-      "Real-time UI updates with Hotwire/Turbo",
-      "Comprehensive RSpec test coverage",
-      "Docker containerization & Kamal deployments",
-    ],
-    links: {
-      github: "https://github.com/the-tone-app/the-tone-core",
-    },
-    duration: "May 2025 - Aug 2025",
-  },
 ];

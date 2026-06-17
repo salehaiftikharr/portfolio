@@ -57,20 +57,6 @@ export const experiences: Experience[] = [
     ],
     techStack: ["PHP", "JavaScript", "MySQL", "WordPress", "TypeScript", "Next.js"],
   },
-  {
-    id: "tone-core",
-    title: "Software Engineer Intern (Part Time)",
-    company: "The Tone Core",
-    location: "Remote",
-    duration: "May 2025 - Aug 2025",
-    type: "work",
-    description: [
-      "Developed core features for a production Rails 8 and Hotwire trading platform, enabling real-time trades and live notifications for 500 or more beta users",
-      "Reduced multi-step trade flow friction by redesigning the UX with Tailwind CSS, lifting user engagement",
-      "Built and maintained a CI/CD pipeline using Docker and Kamal, wrote RSpec tests, and enforced code quality with RuboCop",
-    ],
-    techStack: ["Rails 8", "Hotwire", "PostgreSQL", "Docker", "Kamal"],
-  },
 ];
 
 export const leadership: LeadershipItem[] = [
