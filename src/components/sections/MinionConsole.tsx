@@ -86,8 +86,8 @@ export function MinionConsole() {
     <section id="minion" className="py-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          title="Watch a minion work"
-          subtitle="Real, replayed runs of my autonomous agents — pick one and watch it decide. Every pull request below is live on GitHub."
+          title="Watch my minions work"
+          subtitle="This is the thing I am most obsessed with building right now. Pick a minion, watch it actually decide whether to ship, then click straight through to the real pull request it opened."
         />
 
         {/* prompt chips */}

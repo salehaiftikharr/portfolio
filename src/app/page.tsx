@@ -19,8 +19,8 @@ export default function Home() {
       <main>
         <Hero />
         <About />
-        <Projects />
         <MinionConsole />
+        <Projects />
         <DataViz />
         <Skills />
         <Experience />
