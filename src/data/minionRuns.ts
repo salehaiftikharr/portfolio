@@ -17,6 +17,10 @@ export interface MinionRun {
     reason: string;
     prUrl?: string;
     prLabel?: string;
+    /** Calibrated 0..1 confidence the gate assigned an approved change. */
+    confidence?: number;
+    /** Blast-radius read of the diff. */
+    risk?: "low" | "medium" | "high";
   };
   /** One-line footnote: tests + model. */
   meta: string;
@@ -40,6 +44,7 @@ export const minionRuns: MinionRun[] = [
       "final: 4/7 passing — verifying…",
       "mutation-testing the fix…",
       "mutation check: 3/3 mutants caught",
+      "confidence 0.95 (high) · risk low — clear to auto-ship",
       "approved — pushing branch and opening PR…",
     ],
     outcome: {
@@ -49,6 +54,8 @@ export const minionRuns: MinionRun[] = [
         "Adds a correct, properly exported clamp function using Math.min/Math.max that satisfies every stated case.",
       prUrl: "https://github.com/salehaiftikharr/forge-minions-demo/pull/9",
       prLabel: "forge-minions-demo #9",
+      confidence: 0.95,
+      risk: "low",
     },
     meta: "4/7 passing, no regressions · claude-opus-4-8",
     diff: `@@ export function slugify(input) {

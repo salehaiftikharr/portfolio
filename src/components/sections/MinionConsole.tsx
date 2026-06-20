@@ -9,6 +9,8 @@ import {
   ExternalLink,
   Bot,
   Code2,
+  Gauge,
+  ShieldCheck,
 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { minionRuns, type MinionRun } from "@/data/minionRuns";
@@ -87,7 +89,7 @@ export function MinionConsole() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Watch my minions work"
-          subtitle="This is the thing I am most obsessed with building right now. Pick a minion, watch it actually decide whether to ship, then click straight through to the real pull request it opened."
+          subtitle="This is the thing I am most obsessed with building right now. Pick a minion, watch it actually decide whether to ship, score its own confidence, then click straight through to the real pull request it opened."
         />
 
         {/* prompt chips */}
@@ -165,6 +167,21 @@ export function MinionConsole() {
                     </span>
                   </div>
                   <p className="mt-2 text-sm text-foreground/80">{run.outcome.reason}</p>
+
+                  {run.outcome.confidence != null && (
+                    <div className="mt-3 flex flex-wrap items-center gap-2">
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-medium text-emerald-700">
+                        <Gauge size={13} />
+                        confidence {run.outcome.confidence.toFixed(2)}
+                      </span>
+                      {run.outcome.risk && (
+                        <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-medium text-emerald-700">
+                          <ShieldCheck size={13} />
+                          {run.outcome.risk} blast radius
+                        </span>
+                      )}
+                    </div>
+                  )}
 
                   <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-muted">
                     <span>{run.meta}</span>
