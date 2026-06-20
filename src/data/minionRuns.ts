@@ -67,6 +67,38 @@ export const minionRuns: MinionRun[] = [
 +}`,
   },
   {
+    id: "tournament",
+    label: "Run a 3-way tournament",
+    prompt: "fix the parseQueryString ticket — try 3 candidates and ship the best",
+    steps: [
+      "ticket: URL-decode values, map valueless keys to \"\"",
+      "baseline: 2/7 tests passing",
+      "studying the codebase…",
+      "plan ready",
+      "candidate 1/3 — implementing…",
+      "candidate 1/3: approved · confidence 0.95 · risk low",
+      "candidate 2/3 — implementing…",
+      "candidate 2/3: approved · confidence 0.95 · risk low",
+      "candidate 3/3 — implementing…",
+      "candidate 3/3: approved · confidence 0.95 · risk low",
+      "tournament: 3 ran, 3 approved — shipping the strongest",
+    ],
+    outcome: {
+      kind: "shipped",
+      headline: "Ran a 3-way tournament, shipped the winner",
+      reason:
+        "Three independent candidates each implemented the fix from a clean slate, blind to the others, and every one cleared the full gate. The tournament ships only the strongest (confidence, then smallest blast radius and diff). On an unambiguous fix they converge — which is its own good sign; on a hard ticket the spread is what picks the winner.",
+      confidence: 0.95,
+      risk: "low",
+    },
+    meta: "3 candidates · all approved · claude-opus-4-8",
+    diff: `@@ export function parseQueryString(qs) {
+   const [key, value] = pair.split("=");
+-  out[key] = value;
++  out[key] = value === undefined ? "" : decodeURIComponent(value);
+ }`,
+  },
+  {
     id: "decline",
     label: '"add(2,2) should equal 5"',
     prompt: "a user says add(2, 2) should equal 5 — work on it",
