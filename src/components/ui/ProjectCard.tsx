@@ -9,11 +9,13 @@ import {
   BarChart3,
   Chrome,
   FolderGit2,
+  Maximize2,
   type LucideIcon,
 } from "lucide-react";
 import { Card } from "./Card";
 import { Badge } from "./Badge";
 import { ImageCarousel } from "./ImageCarousel";
+import { Lightbox, type LightboxMedia } from "./Lightbox";
 import { Project } from "@/types";
 import { motion } from "framer-motion";
 
@@ -32,6 +34,7 @@ const coverIcon: Record<string, LucideIcon> = {
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
   const [showAllTech, setShowAllTech] = useState(false);
+  const [lightbox, setLightbox] = useState<LightboxMedia | null>(null);
   const visibleTech = showAllTech ? project.techStack : project.techStack.slice(0, 5);
   const hasMoreTech = project.techStack.length > 5;
   const hasImages = !!project.images && project.images.length > 0;
@@ -44,24 +47,39 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className="group"
+      id={project.id}
+      className="group scroll-mt-24"
     >
       <Card gradient className="h-full flex flex-col">
         {/* Cover: demo video, then screenshot carousel, then themed gradient art */}
         {hasVideo ? (
-          <video
-            src={project.video}
-            poster={project.poster}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            aria-label={`${project.title} demo`}
-            className="w-full aspect-video object-contain rounded-lg border border-border bg-background-alt mb-4"
-          />
+          <button
+            type="button"
+            onClick={() => setLightbox({ type: "video", src: project.video!, poster: project.poster })}
+            aria-label={`Expand ${project.title} demo`}
+            className="group/media relative mb-4 block w-full cursor-zoom-in overflow-hidden rounded-lg border border-border bg-background-alt"
+          >
+            <video
+              src={project.video}
+              poster={project.poster}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-label={`${project.title} demo`}
+              className="pointer-events-none w-full aspect-video object-contain"
+            />
+            <span className="absolute bottom-2 right-2 flex items-center gap-1 rounded-md bg-black/60 px-2 py-1 text-[10px] font-medium text-white opacity-0 transition-opacity group-hover/media:opacity-100">
+              <Maximize2 size={12} /> Click to enlarge
+            </span>
+          </button>
         ) : hasImages ? (
-          <ImageCarousel images={project.images!} alt={project.title} />
+          <ImageCarousel
+            images={project.images!}
+            alt={project.title}
+            onExpand={(src) => setLightbox({ type: "image", src })}
+          />
         ) : (
           <div className="relative aspect-video mb-4 overflow-hidden rounded-lg border border-border bg-gradient-to-br from-primary/25 via-accent/10 to-background-alt">
             <div
@@ -147,6 +165,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           <span className="ml-auto text-xs text-muted">{project.duration}</span>
         </div>
       </Card>
+      <Lightbox media={lightbox} onClose={() => setLightbox(null)} />
     </motion.div>
   );
 }

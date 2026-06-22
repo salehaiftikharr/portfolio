@@ -7,9 +7,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 interface ImageCarouselProps {
   images: string[];
   alt: string;
+  onExpand?: (src: string) => void;
 }
 
-export function ImageCarousel({ images, alt }: ImageCarouselProps) {
+export function ImageCarousel({ images, alt, onExpand }: ImageCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToPrevious = () => {
@@ -34,7 +35,8 @@ export function ImageCarousel({ images, alt }: ImageCarouselProps) {
         src={images[currentIndex]}
         alt={`${alt} - Image ${currentIndex + 1}`}
         fill
-        className="object-cover"
+        onClick={() => onExpand?.(images[currentIndex])}
+        className={`object-cover ${onExpand ? "cursor-zoom-in" : ""}`}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
 
