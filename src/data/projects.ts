@@ -169,7 +169,10 @@ export const projects: Project[] = [
     ],
     links: {
       github: "https://github.com/salehaiftikharr/fuerza",
+      live: "https://fuerza-two.vercel.app",
     },
+    video: "/fuerza-demo.mp4",
+    poster: "/fuerza-demo-poster.jpg",
     images: [
       "/fuerza_explore.png",
       "/fuerza_signup.png",
