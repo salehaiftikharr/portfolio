@@ -43,7 +43,6 @@ export const siteConfig: SiteConfig = {
     github: "https://github.com/salehaiftikharr",
     linkedin: "https://www.linkedin.com/in/salehaiftikharr/",
   },
-  resumeUrl: "/resume.pdf",
 };
 
 export const education = {

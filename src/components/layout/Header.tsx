@@ -78,14 +78,6 @@ export function Header() {
                 {link.label}
               </a>
             ))}
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-glow transition-colors text-sm font-medium"
-            >
-              Resume
-            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -112,14 +104,6 @@ export function Header() {
                   {link.label}
                 </a>
               ))}
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-glow transition-colors text-sm font-medium w-fit"
-              >
-                Resume
-              </a>
             </div>
           </div>
         )}

@@ -63,5 +63,4 @@ export interface SiteConfig {
     linkedin?: string;
     twitter?: string;
   };
-  resumeUrl?: string;
 }
