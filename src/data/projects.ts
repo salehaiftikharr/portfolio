@@ -35,6 +35,40 @@ export const projects: Project[] = [
     duration: "Jun 2026",
   },
   {
+    id: "grounded",
+    title: "Grounded",
+    role: "Creator",
+    type: "personal",
+    featured: true,
+    description:
+      "A retrieval question-answering app that answers from a corpus with citations and refuses when the answer is not grounded, now with a spoken voice layer and bring-your-own-document upload.",
+    longDescription:
+      "A retrieval-augmented question-answering app that guards both ends of the pipeline. A grounding gate refuses to answer when the retrieved evidence is too weak, judged against a relative score baseline rather than a brittle fixed cutoff, and a separate decorrelated model checks every claim in the answer against the sources, with a mechanical quote check confirming the supporting text actually exists in a retrieved chunk. An eval harness measures how often it wrongly marks a supported answer as unsupported. On top of the core, an ElevenLabs voice layer reads answers, and honest refusals, aloud, and a bring-your-own-document mode lets a visitor upload a PDF or text file that is embedded into Postgres with pgvector and answered against through the same gates.",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Claude API",
+      "OpenAI Embeddings",
+      "pgvector",
+      "Postgres",
+      "ElevenLabs",
+      "RAG",
+      "LLM Evals",
+      "Vercel AI SDK",
+    ],
+    highlights: [
+      "Grounding gate that refuses when retrieval is too weak",
+      "Faithfulness check verifies every claim against its source",
+      "Voice layer that speaks answers, and refusals, aloud",
+      "Bring your own document, backed by Postgres and pgvector",
+    ],
+    links: {
+      github: "https://github.com/salehaiftikharr/grounded",
+      live: "https://grounded-theta.vercel.app",
+    },
+    duration: "Jun 2026 - Jul 2026",
+  },
+  {
     id: "analytics-chat-assistant",
     title: "Analytics Chat Assistant",
     role: "Creator",

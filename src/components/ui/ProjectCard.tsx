@@ -9,6 +9,7 @@ import {
   BarChart3,
   Chrome,
   FolderGit2,
+  ShieldCheck,
   Maximize2,
   type LucideIcon,
 } from "lucide-react";
@@ -28,6 +29,7 @@ interface ProjectCardProps {
 // intentional rather than empty.
 const coverIcon: Record<string, LucideIcon> = {
   "forge-minions": Bot,
+  "grounded": ShieldCheck,
   "analytics-chat-assistant": BarChart3,
   "application-tracker": Chrome,
 };
