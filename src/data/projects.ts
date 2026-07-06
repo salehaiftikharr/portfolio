@@ -66,6 +66,7 @@ export const projects: Project[] = [
       github: "https://github.com/salehaiftikharr/grounded",
       live: "https://grounded-theta.vercel.app",
     },
+    images: ["/grounded-app.png"],
     duration: "Jun 2026 - Jul 2026",
   },
   {
