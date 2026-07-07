@@ -11,7 +11,7 @@ export const experiences: Experience[] = [
     description: [
       "Embed with early users, running discovery to surface what they actually need and turning it into full-stack features in React, TypeScript, and PostgreSQL (Drizzle) that reach them behind CI gates",
       "Shipped the Stripe billing that made the hosted product sellable, integrating subscription checkout, webhook-synced plan state, and tier-gated access so SuperOrgs could onboard paying customers",
-      "Own delivery end to end, from architecture through final review, using agentic coding workflows (Claude Code) to take on larger scope, and hardened multi-tenant data scoping by moving tenant filtering into the query layer",
+      "Own delivery end to end, from architecture through final review, using agentic coding workflows to take on larger scope, and hardened multi-tenant data scoping by moving tenant filtering into the query layer",
     ],
     techStack: ["React", "TypeScript", "Drizzle", "PostgreSQL", "Claude Code"],
   },
