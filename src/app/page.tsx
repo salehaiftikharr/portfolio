@@ -8,7 +8,6 @@ import { MinionConsole } from "@/components/sections/MinionConsole";
 import { DataViz } from "@/components/sections/DataViz";
 import { Skills } from "@/components/sections/Skills";
 import { Experience } from "@/components/sections/Experience";
-import { Writing } from "@/components/sections/Writing";
 import { Leadership } from "@/components/sections/Leadership";
 import { Contact } from "@/components/sections/Contact";
 
@@ -25,7 +24,6 @@ export default function Home() {
         <DataViz />
         <Skills />
         <Experience />
-        <Writing />
         <Leadership />
         <Contact />
       </main>

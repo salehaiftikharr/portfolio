@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Briefcase, MapPin } from "lucide-react";
+import { Briefcase, MapPin, ArrowUpRight } from "lucide-react";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -73,6 +73,24 @@ export function Experience() {
                           <Badge key={tech} variant="outline">
                             {tech}
                           </Badge>
+                        ))}
+                      </div>
+                    )}
+
+                    {exp.posts && (
+                      <div className="mt-3 pt-3 border-t border-border flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted">
+                        <span>Wrote about it:</span>
+                        {exp.posts.map((p) => (
+                          <a
+                            key={p.url}
+                            href={p.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-0.5 text-primary hover:text-primary-glow transition-colors"
+                          >
+                            {p.title}
+                            <ArrowUpRight size={12} />
+                          </a>
                         ))}
                       </div>
                     )}
