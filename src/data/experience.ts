@@ -9,9 +9,9 @@ export const experiences: Experience[] = [
     duration: "Jun 2026 - Present",
     type: "work",
     description: [
-      "Build a unified department-management dialog in React and TypeScript (Drizzle, PostgreSQL) that pulls member counts, bulk archive, and mass reassignment into one screen, replacing several disconnected admin menus",
-      "Fixed a multi-tenant notifications feed that surfaced wrong items and inflated counts by moving filtering to the database query layer, restoring accurate, tenant-scoped data",
-      "Take on bigger scope and ship faster by driving agentic coding workflows with Claude Code, owning architecture and final review behind CI gates that catch issues before merge",
+      "Embed with early users, running discovery to surface what they actually need and turning it into full-stack features in React, TypeScript, and PostgreSQL (Drizzle) that reach them behind CI gates",
+      "Shipped the Stripe billing that made the hosted product sellable, integrating subscription checkout, webhook-synced plan state, and tier-gated access so SuperOrgs could onboard paying customers",
+      "Own delivery end to end, from architecture through final review, using agentic coding workflows (Claude Code) to take on larger scope, and hardened multi-tenant data scoping by moving tenant filtering into the query layer",
     ],
     techStack: ["React", "TypeScript", "Drizzle", "PostgreSQL", "Claude Code"],
   },
