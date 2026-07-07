@@ -14,10 +14,6 @@ export const experiences: Experience[] = [
       "Own delivery end to end, from architecture through final review, using agentic coding workflows to take on larger scope, and hardened multi-tenant data scoping by moving tenant filtering into the query layer",
     ],
     techStack: ["React", "TypeScript", "Drizzle", "PostgreSQL", "Claude Code"],
-    posts: [
-      { title: "Ask Claude about your AI agents", url: "https://www.superorgs.com/blog/mcp" },
-      { title: "Every agent run, live", url: "https://www.superorgs.com/blog/activity-streaming" },
-    ],
   },
   {
     id: "ico-tpm",

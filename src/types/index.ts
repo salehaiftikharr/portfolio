@@ -35,7 +35,6 @@ export interface Experience {
   type: "work" | "education";
   description: string[];
   techStack?: string[];
-  posts?: { title: string; url: string }[];
 }
 
 export interface LeadershipItem {
