@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://saleha.live"),
   title: "Saleha Iftikhar | Forward Deployed Engineer",
   description:
-    "AI-native engineer and recent Computer Science graduate from Gettysburg College. I build autonomous agents and full-stack products, from a fleet of \"minions\" that open verified pull requests to chat-native business intelligence tools.",
+    "Forward deployed engineer at SuperOrgs and AI-native builder, a recent Computer Science graduate from Gettysburg College. I build autonomous agents and full-stack products, from a fleet of \"minions\" that open verified pull requests to chat-native business intelligence tools.",
   keywords: [
     "AI engineer",
     "AI agents",
