@@ -17,7 +17,7 @@ export const experiences: Experience[] = [
   },
   {
     id: "ico-tpm",
-    title: "Technical Project Manager – Student Worker",
+    title: "Student Technical Project Manager",
     company: "Infrastructure and Computing Office, Gettysburg College",
     location: "Gettysburg, PA",
     duration: "Jan 2026 - May 2026",
@@ -31,7 +31,7 @@ export const experiences: Experience[] = [
   },
   {
     id: "impact-rehab",
-    title: "Student Software Developer – Senior Capstone Project",
+    title: "Student Software Developer",
     company: "Impact Rehab",
     location: "Gettysburg, PA",
     duration: "Aug 2025 - Dec 2025",
