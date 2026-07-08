@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://saleha.live"),
-  title: "Saleha Iftikhar | AI-Native Engineer",
+  title: "Saleha Iftikhar | Forward Deployed Engineer",
   description:
     "AI-native engineer and recent Computer Science graduate from Gettysburg College. I build autonomous agents and full-stack products, from a fleet of \"minions\" that open verified pull requests to chat-native business intelligence tools.",
   keywords: [
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Saleha Iftikhar" }],
   openGraph: {
-    title: "Saleha Iftikhar | AI-Native Engineer",
+    title: "Saleha Iftikhar | Forward Deployed Engineer",
     description:
       "I build AI agents that do real work, and full-stack products that ship.",
     url: "https://saleha.live",
@@ -42,13 +42,13 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Saleha Iftikhar, AI-Native Engineer",
+        alt: "Saleha Iftikhar, Forward Deployed Engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Saleha Iftikhar | AI-Native Engineer",
+    title: "Saleha Iftikhar | Forward Deployed Engineer",
     description:
       "I build AI agents that do real work, and full-stack products that ship.",
     images: ["/og.png"],
