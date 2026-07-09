@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  /* Soft off-white and baby pink theme.
-     Note: on a light background, emphasis reads DARKER, so primary-glow is a
-     deeper rose than primary (the opposite of a dark theme). */
-  --background: #fff8fb;       /* off-white with a whisper of pink */
-  --background-alt: #fdeef5;   /* soft blush: cards and alternating sections */
-  --foreground: #44233a;       /* deep plum, warm and very readable */
-  --muted: #8a5a6e;            /* muted mauve for secondary text (kept readable) */
-  --primary: #d24b85;          /* softer rose: links, buttons, icons */
-  --primary-glow: #9d2f5e;     /* deeper rose for hover and emphasis */
-  --border: #f7dce9;           /* gentle blush border */
-  --accent: #f6aed0;           /* pastel pink for decorative gradients */
-  --accent-glow: #fbd0e8;      /* lightest blush for glows */
+  /* Clean editorial light theme with an indigo-to-violet accent.
+     On a light background, emphasis reads DARKER, so primary-glow is a
+     deeper indigo than primary. */
+  --background: #fbfbfd;       /* crisp cool near-white */
+  --background-alt: #f2f3f8;   /* cool light gray: cards and alternating sections */
+  --foreground: #14151d;       /* near-black cool ink, very readable */
+  --muted: #565d70;            /* cool slate for secondary text */
+  --primary: #4f46e5;          /* indigo: links, buttons, icons */
+  --primary-glow: #4338ca;     /* deeper indigo for hover and emphasis */
+  --border: #e5e7ef;           /* cool light border */
+  --accent: #8b5cf6;           /* violet for decorative gradients */
+  --accent-glow: #c7d2fe;      /* light indigo for glows */
 }
 
 @theme inline {
