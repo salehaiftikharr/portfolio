@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  /* Clean editorial light theme with an indigo-to-violet accent.
-     On a light background, emphasis reads DARKER, so primary-glow is a
-     deeper indigo than primary. */
-  --background: #fbfbfd;       /* crisp cool near-white */
-  --background-alt: #f2f3f8;   /* cool light gray: cards and alternating sections */
-  --foreground: #14151d;       /* near-black cool ink, very readable */
-  --muted: #565d70;            /* cool slate for secondary text */
-  --primary: #4f46e5;          /* indigo: links, buttons, icons */
-  --primary-glow: #4338ca;     /* deeper indigo for hover and emphasis */
-  --border: #e5e7ef;           /* cool light border */
-  --accent: #8b5cf6;           /* violet for decorative gradients */
-  --accent-glow: #c7d2fe;      /* light indigo for glows */
+  /* Dark, premium theme (Linear/Vercel-style): near-black canvas, bright
+     indigo-to-violet accent. On a dark background, emphasis reads LIGHTER,
+     so primary-glow is a lighter indigo than primary. */
+  --background: #0a0b10;       /* near-black canvas */
+  --background-alt: #14161f;   /* elevated surface: cards and alternating sections */
+  --foreground: #eef0f6;       /* near-white, very readable */
+  --muted: #9198ab;            /* cool light-slate for secondary text */
+  --primary: #7c8cff;          /* bright indigo: links, buttons, icons */
+  --primary-glow: #a5b1ff;     /* lighter indigo for hover and emphasis */
+  --border: #23262f;           /* subtle dark border */
+  --accent: #b18bff;           /* violet for decorative gradients */
+  --accent-glow: #6d5bd0;      /* deep violet for glows and orbs */
 }
 
 @theme inline {
