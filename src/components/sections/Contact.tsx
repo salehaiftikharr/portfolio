@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, MapPin, Github, Linkedin } from "lucide-react";
+import { Mail, Github, Linkedin } from "lucide-react";
 import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { siteConfig } from "@/data/siteConfig";
@@ -68,10 +68,6 @@ export function Contact() {
               );
             })}
           </div>
-
-          <p className="mt-8 flex items-center justify-center gap-2 text-center text-sm text-muted">
-            <MapPin size={16} /> {siteConfig.location}
-          </p>
         </div>
       </div>
     </section>
