@@ -192,28 +192,21 @@ export const projects: Project[] = [
     type: "academic",
     featured: true,
     description:
-      "A full-stack social fitness platform enabling users to log workouts, share posts, follow others, and direct message.",
+      "Strava for lifters. A social fitness app to log workouts, share them to a feed, follow other athletes, and give kudos, built because runners have Strava but lifters had nothing like it.",
     longDescription:
-      "Developed a full-stack social fitness platform using React, Node.js/Express, and MySQL, enabling users to log workouts, share posts, follow others, and direct message. Designed normalized relational database schemas with transactional integrity for workouts, posts, follows, and messaging. Implemented JWT-based authentication with refresh tokens, RESTful APIs, and UI updates for real-time user experience.",
+      "I started Fuerza as a project for my databases class in 2025, out of a simple frustration: runners have Strava, but there was nothing like it for people who lift. It began as a schema and a handful of endpoints, and I have been rebuilding and improving it ever since into a real social fitness app, where you log a workout, share it to a feed, follow other athletes, give kudos, comment, and message. It is built with React, Node and Express, and MySQL, with JWT authentication and refresh tokens, a normalized relational schema, and a no-backend live-demo mode so anyone can try it instantly. It has come a long way from the class project it started as.",
     techStack: ["React", "Node.js", "Express", "MySQL", "JWT", "REST API"],
     highlights: [
-      "Social media features for fitness",
-      "Normalized database design",
-      "JWT authentication with refresh tokens",
-      "RESTful API architecture",
+      "Started as a 2025 databases class project, rebuilt ever since",
+      "Feed, kudos, comments, follows, and direct messaging",
+      "Normalized MySQL schema, JWT auth with refresh tokens",
+      "No-backend live-demo mode so anyone can try it instantly",
     ],
     links: {
       github: "https://github.com/salehaiftikharr/fuerza",
       live: "https://fuerza-two.vercel.app",
     },
-    video: "/fuerza-demo.mp4",
-    poster: "/fuerza-demo-poster.jpg",
-    images: [
-      "/fuerza_explore.png",
-      "/fuerza_signup.png",
-      "/fuerza_new_post.png",
-      "/fuerza_messages.png",
-    ],
-    duration: "Jan 2025 - May 2025",
+    images: ["/fuerza-app.png"],
+    duration: "Jan 2025 - Present",
   },
 ];
