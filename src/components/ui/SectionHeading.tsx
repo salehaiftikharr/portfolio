@@ -14,13 +14,13 @@ export function SectionHeading({ title, subtitle }: SectionHeadingProps) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="text-center mb-12"
+      className="mb-12 max-w-2xl"
     >
-      <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-foreground via-primary-glow to-primary bg-clip-text text-transparent">
+      <h2 className="flex items-center gap-3 text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+        <span className="inline-block h-7 w-1.5 rounded-full bg-gradient-to-b from-primary to-accent" />
         {title}
       </h2>
-      <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-primary to-accent" />
-      {subtitle && <p className="text-muted max-w-2xl mx-auto mt-4">{subtitle}</p>}
+      {subtitle && <p className="text-muted mt-4 text-lg leading-relaxed">{subtitle}</p>}
     </motion.div>
   );
 }
