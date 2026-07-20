@@ -24,15 +24,15 @@ const outcomeStyle: Record<
 > = {
   shipped: {
     icon: Check,
-    ring: "border-emerald-400/40 bg-emerald-50",
-    text: "text-emerald-700",
-    chip: "bg-emerald-100 text-emerald-700",
+    ring: "border-emerald-400/30 bg-emerald-500/10",
+    text: "text-emerald-300",
+    chip: "bg-emerald-500/15 text-emerald-300",
   },
   declined: {
     icon: Ban,
-    ring: "border-amber-400/40 bg-amber-50",
-    text: "text-amber-700",
-    chip: "bg-amber-100 text-amber-700",
+    ring: "border-amber-400/30 bg-amber-500/10",
+    text: "text-amber-300",
+    chip: "bg-amber-500/15 text-amber-300",
   },
   authored: {
     icon: FlaskConical,
@@ -49,8 +49,8 @@ function DiffView({ diff }: { diff: string }) {
         <div
           key={i}
           className={cn(
-            line.startsWith("+") && "text-emerald-600",
-            line.startsWith("-") && "text-rose-500",
+            line.startsWith("+") && "text-emerald-400",
+            line.startsWith("-") && "text-rose-400",
             line.startsWith("@@") && "text-muted",
             !/^[+\-@]/.test(line) && "text-muted",
           )}
@@ -170,12 +170,12 @@ export function MinionConsole() {
 
                   {run.outcome.confidence != null && (
                     <div className="mt-3 flex flex-wrap items-center gap-2">
-                      <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-medium text-emerald-700">
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-2.5 py-1 text-xs font-medium text-emerald-300">
                         <Gauge size={13} />
                         confidence {run.outcome.confidence.toFixed(2)}
                       </span>
                       {run.outcome.risk && (
-                        <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-medium text-emerald-700">
+                        <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-2.5 py-1 text-xs font-medium text-emerald-300">
                           <ShieldCheck size={13} />
                           {run.outcome.risk} blast radius
                         </span>

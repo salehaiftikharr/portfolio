@@ -3,6 +3,9 @@
 import { useState } from "react";
 import {
   ExternalLink,
+  Check,
+  ChevronDown,
+  ChevronUp,
   Github,
   Users,
   Bot,
@@ -36,6 +39,7 @@ const coverIcon: Record<string, LucideIcon> = {
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
   const [showAllTech, setShowAllTech] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
   const [lightbox, setLightbox] = useState<LightboxMedia | null>(null);
   const visibleTech = showAllTech ? project.techStack : project.techStack.slice(0, 5);
   const hasMoreTech = project.techStack.length > 5;
@@ -122,7 +126,33 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         <p className="text-primary text-sm font-medium mb-2">{project.role}</p>
 
         {/* Description */}
-        <p className="text-muted text-sm mb-4 flex-grow">{project.description}</p>
+        <p className="text-muted text-sm mb-3">{project.description}</p>
+
+        {/* The card leads with a one-liner and keeps the deeper write-up and
+            highlights behind a toggle, so the projects grid stays scannable. */}
+        <button
+          onClick={() => setShowDetails((s) => !s)}
+          className="mb-4 inline-flex items-center gap-1 self-start text-xs font-medium text-primary hover:text-primary-glow cursor-pointer"
+        >
+          {showDetails ? <ChevronUp size={13} /> : <ChevronDown size={13} />}
+          {showDetails ? "Show less" : "Details & highlights"}
+        </button>
+
+        {showDetails && (
+          <div className="mb-4 space-y-3">
+            <p className="text-sm leading-relaxed text-foreground/80">
+              {project.longDescription}
+            </p>
+            <ul className="space-y-1.5">
+              {project.highlights.map((h) => (
+                <li key={h} className="flex items-start gap-2 text-sm text-muted">
+                  <Check size={14} className="mt-0.5 shrink-0 text-primary-glow" />
+                  <span>{h}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         {/* Tech Stack */}
         <div className="flex flex-wrap gap-1.5 mb-4">
@@ -141,7 +171,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
 
         {/* Links */}
-        <div className="flex items-center gap-3 pt-4 border-t border-border">
+        <div className="mt-auto flex items-center gap-3 pt-4 border-t border-border">
           {project.links.github && (
             <a
               href={project.links.github}

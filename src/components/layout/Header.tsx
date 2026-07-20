@@ -12,6 +12,7 @@ const navLinks = [
   { href: "#data", label: "Data" },
   { href: "#skills", label: "Skills" },
   { href: "#experience", label: "Experience" },
+  { href: "#leadership", label: "Leadership" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -73,12 +74,20 @@ export function Header() {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <a key={link.href} href={link.href} className={linkClass(link.href)}>
                 {link.label}
               </a>
             ))}
+            <a
+              href="/saleha-iftikhar-resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg border border-border px-3 py-1.5 text-sm text-foreground transition-colors hover:border-primary/50 hover:text-primary hover:bg-primary/5"
+            >
+              Resume
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -105,6 +114,14 @@ export function Header() {
                   {link.label}
                 </a>
               ))}
+              <a
+                href="/saleha-iftikhar-resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary-glow transition-colors"
+              >
+                Resume
+              </a>
             </div>
           </div>
         )}

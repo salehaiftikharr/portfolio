@@ -65,6 +65,27 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Saleha Iftikhar",
+              url: "https://saleha.live",
+              jobTitle: "Forward Deployed Engineer",
+              worksFor: { "@type": "Organization", name: "SuperOrgs" },
+              alumniOf: {
+                "@type": "CollegeOrUniversity",
+                name: "Gettysburg College",
+              },
+              sameAs: [
+                "https://github.com/salehaiftikharr",
+                "https://www.linkedin.com/in/salehaiftikharr/",
+              ],
+            }),
+          }}
+        />
         <AnimatedBackground />
         {children}
       </body>

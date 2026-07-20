@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/data/siteConfig";
 
@@ -58,6 +58,15 @@ export function Hero() {
           <motion.div {...fade(0.32)} className="flex flex-wrap items-center gap-4">
             <Button size="lg" onClick={() => document.getElementById("projects")?.scrollIntoView()}>
               View my work
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="gap-2"
+              onClick={() => window.open("/saleha-iftikhar-resume.pdf", "_blank")}
+            >
+              <Download size={18} />
+              Resume
             </Button>
             <Button
               variant="outline"
