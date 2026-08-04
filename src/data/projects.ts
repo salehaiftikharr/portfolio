@@ -41,9 +41,9 @@ export const projects: Project[] = [
     type: "personal",
     featured: true,
     description:
-      "A retrieval question-answering app that answers from a corpus with citations and refuses when the answer is not grounded, now with a spoken voice layer and bring-your-own-document upload.",
+      "A retrieval question-answering app for documents a general chatbot has never seen. It answers only from the source with inline citations, checks every claim against a real quote, and refuses when the document does not hold the answer.",
     longDescription:
-      "A retrieval-augmented question-answering app that guards both ends of the pipeline. A grounding gate refuses to answer when the retrieved evidence is too weak, judged against a relative score baseline rather than a brittle fixed cutoff, and a separate decorrelated model checks every claim in the answer against the sources, with a mechanical quote check confirming the supporting text actually exists in a retrieved chunk. An eval harness measures how often it wrongly marks a supported answer as unsupported. On top of the core, an ElevenLabs voice layer reads answers, and honest refusals, aloud, and a bring-your-own-document mode lets a visitor upload a PDF or text file that is embedded into Postgres with pgvector and answered against through the same gates.",
+      "A retrieval-augmented question-answering app built for the case where being wrong is expensive: answering questions about a specific document, such as a contract, a policy, or a research paper, that a general chatbot was never trained on. It guards both ends of the pipeline. A grounding gate refuses to answer when the retrieved evidence is too weak, judged against a relative score baseline rather than a brittle fixed cutoff, and a separate decorrelated model checks every claim in the answer against the sources, with a mechanical quote check confirming the supporting text actually exists in a retrieved chunk. Answers stream in live with the grounding decision shown as it happens, and an honest refusal reads as one rather than a confident guess. Visitors can load a one-click sample policy, contract, or research summary, or bring their own PDF or text file, which is embedded into Postgres with pgvector and answered through the same gates. An ElevenLabs voice layer reads answers, and refusals, aloud, and an eval harness measures how often the checker wrongly marks a supported answer as unsupported.",
     techStack: [
       "Next.js",
       "TypeScript",
@@ -57,17 +57,18 @@ export const projects: Project[] = [
       "Vercel AI SDK",
     ],
     highlights: [
-      "Grounding gate that refuses when retrieval is too weak",
-      "Faithfulness check verifies every claim against its source",
-      "Voice layer that speaks answers, and refusals, aloud",
-      "Bring your own document, backed by Postgres and pgvector",
+      "Answers only from the loaded document, with inline citations",
+      "Grounding gate refuses instead of guessing when the answer is not there",
+      "A decorrelated model verifies every claim against a real quote",
+      "One-click sample policy, contract, and research documents to try",
+      "Bring your own PDF or text, backed by Postgres and pgvector",
     ],
     links: {
       github: "https://github.com/salehaiftikharr/grounded",
       live: "https://grounded-theta.vercel.app",
     },
     images: ["/grounded-app.png"],
-    duration: "Jun 2026 - Jul 2026",
+    duration: "Jun 2026 - Aug 2026",
   },
   {
     id: "analytics-chat-assistant",
