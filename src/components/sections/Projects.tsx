@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProjectCard } from "@/components/ui/ProjectCard";
 import { projects } from "@/data/projects";
@@ -19,6 +21,16 @@ export function Projects() {
           {featuredProjects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
+        </div>
+
+        <div className="mt-10">
+          <Link
+            href="/work"
+            className="inline-flex items-center gap-1.5 font-medium text-primary transition-colors hover:text-primary-glow"
+          >
+            Full project archive
+            <ArrowRight size={16} />
+          </Link>
         </div>
       </div>
     </section>

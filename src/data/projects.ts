@@ -107,7 +107,7 @@ export const projects: Project[] = [
     title: "Application Tracker",
     role: "Creator",
     type: "personal",
-    featured: true,
+    featured: false,
     description:
       "A job-tracking web app plus a Chrome (MV3) extension that scrapes postings from 6 ATS platforms into a profile-based autofill engine.",
     longDescription:
@@ -134,7 +134,7 @@ export const projects: Project[] = [
     title: "Impact Rehab",
     role: "Team Lead & Developer",
     type: "academic",
-    featured: true,
+    featured: false,
     description:
       "A full-stack physiotherapy management application that automates MSK score calculations and streamlines patient data workflows.",
     longDescription:
@@ -164,7 +164,7 @@ export const projects: Project[] = [
     title: "EANGUS Leadership Directory",
     role: "Web Development Intern",
     type: "professional",
-    featured: true,
+    featured: false,
     description:
       "A WordPress plugin managing 1,000+ leadership records across 5 directory sections with secure admin forms and dynamic shortcodes.",
     longDescription:
@@ -191,7 +191,7 @@ export const projects: Project[] = [
     title: "Fuerza",
     role: "Full-Stack Developer",
     type: "academic",
-    featured: true,
+    featured: false,
     description:
       "Strava for lifters. A social fitness app to log workouts, share them to a feed, follow other athletes, and give kudos, built because runners have Strava but lifters had nothing like it.",
     longDescription:

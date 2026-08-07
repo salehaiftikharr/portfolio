@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/data/siteConfig";
 
@@ -22,10 +22,10 @@ export function Hero() {
             className="inline-flex items-center gap-2 rounded-full border border-border bg-background-alt px-4 py-1.5 text-sm text-muted mb-8"
           >
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
             </span>
-            Open to 2026 new-grad Software & Solutions Engineering roles
+            Open to roles across the US · Remote or on site
           </motion.div>
 
           {/* Name */}
@@ -58,15 +58,6 @@ export function Hero() {
           <motion.div {...fade(0.32)} className="flex flex-wrap items-center gap-4">
             <Button size="lg" onClick={() => document.getElementById("projects")?.scrollIntoView()}>
               View my work
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="gap-2"
-              onClick={() => window.open("/saleha-iftikhar-resume.pdf", "_blank")}
-            >
-              <Download size={18} />
-              Resume
             </Button>
             <Button
               variant="outline"

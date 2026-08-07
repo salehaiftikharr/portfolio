@@ -81,12 +81,10 @@ export function Header() {
               </a>
             ))}
             <a
-              href="/saleha-iftikhar-resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contact"
               className="rounded-lg border border-border px-3 py-1.5 text-sm text-foreground transition-colors hover:border-primary/50 hover:text-primary hover:bg-primary/5"
             >
-              Resume
+              Get in touch
             </a>
           </div>
 
@@ -114,14 +112,6 @@ export function Header() {
                   {link.label}
                 </a>
               ))}
-              <a
-                href="/saleha-iftikhar-resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:text-primary-glow transition-colors"
-              >
-                Resume
-              </a>
             </div>
           </div>
         )}

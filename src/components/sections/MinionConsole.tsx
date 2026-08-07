@@ -36,23 +36,23 @@ const outcomeStyle: Record<
   },
   authored: {
     icon: FlaskConical,
-    ring: "border-primary/30 bg-primary/5",
-    text: "text-primary-glow",
-    chip: "bg-primary/10 text-primary",
+    ring: "border-sky-400/30 bg-sky-500/10",
+    text: "text-sky-300",
+    chip: "bg-sky-500/15 text-sky-300",
   },
 };
 
 function DiffView({ diff }: { diff: string }) {
   return (
-    <pre className="mt-3 overflow-x-auto rounded-lg border border-border bg-background p-3 text-xs leading-relaxed">
+    <pre className="mt-3 overflow-x-auto rounded-lg border border-white/15 bg-black/30 p-3 text-xs leading-relaxed">
       {diff.split("\n").map((line, i) => (
         <div
           key={i}
           className={cn(
             line.startsWith("+") && "text-emerald-400",
             line.startsWith("-") && "text-rose-400",
-            line.startsWith("@@") && "text-muted",
-            !/^[+\-@]/.test(line) && "text-muted",
+            line.startsWith("@@") && "text-white/50",
+            !/^[+\-@]/.test(line) && "text-white/50",
           )}
         >
           {line || " "}
@@ -62,15 +62,13 @@ function DiffView({ diff }: { diff: string }) {
   );
 }
 
-export function MinionConsole() {
-  const [activeId, setActiveId] = useState(minionRuns[0].id);
-  const run = minionRuns.find((r) => r.id === activeId)!;
+/* Keyed by run id from the parent, so switching minions remounts the player
+   and playback state resets for free. */
+function ConsolePlayer({ run }: { run: MinionRun }) {
   const [revealed, setRevealed] = useState(0);
   const [showDiff, setShowDiff] = useState(false);
 
   useEffect(() => {
-    setRevealed(0);
-    setShowDiff(false);
     let i = 0;
     const timer = setInterval(() => {
       i += 1;
@@ -78,11 +76,123 @@ export function MinionConsole() {
       if (i >= run.steps.length) clearInterval(timer);
     }, STEP_MS);
     return () => clearInterval(timer);
-  }, [activeId, run.steps.length]);
+  }, [run.steps.length]);
 
   const done = revealed >= run.steps.length;
   const style = outcomeStyle[run.outcome.kind];
   const OutcomeIcon = style.icon;
+
+  return (
+    /* console: deliberately stays dark, the one terminal island on the
+       light page */
+    <div className="rounded-2xl border border-black/20 bg-[#141414] text-white shadow-lg overflow-hidden">
+      {/* title bar */}
+      <div className="flex items-center gap-2 border-b border-white/15 px-4 py-2.5">
+        <Bot size={16} className="text-emerald-400" />
+        <span className="text-sm font-medium text-white">minion</span>
+        <span className="ml-auto flex gap-1.5">
+          <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+          <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+          <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+        </span>
+      </div>
+
+      <div className="p-4 sm:p-6">
+        {/* user prompt */}
+        <div className="flex justify-end mb-4">
+          <span className="rounded-2xl rounded-br-sm bg-primary px-4 py-2 text-sm text-white max-w-[85%]">
+            {run.prompt}
+          </span>
+        </div>
+
+        {/* streamed steps */}
+        <div className="font-mono text-[13px] leading-relaxed space-y-1 min-h-[160px]">
+          {run.steps.slice(0, revealed).map((step, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 4 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.2 }}
+              className="text-white/75"
+            >
+              <span className="text-emerald-400">•</span> {step}
+            </motion.div>
+          ))}
+          {!done && (
+            <span className="inline-block h-4 w-2 animate-pulse bg-white/80 align-middle" />
+          )}
+        </div>
+
+        {/* outcome */}
+        <AnimatePresence>
+          {done && (
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+              className={cn("mt-5 rounded-xl border p-4", style.ring)}
+            >
+              <div className="flex items-center gap-2">
+                <span className={cn("rounded-full p-1", style.chip)}>
+                  <OutcomeIcon size={15} />
+                </span>
+                <span className={cn("font-semibold", style.text)}>
+                  {run.outcome.headline}
+                </span>
+              </div>
+              <p className="mt-2 text-sm text-white/80">{run.outcome.reason}</p>
+
+              {run.outcome.confidence != null && (
+                <div className="mt-3 flex flex-wrap items-center gap-2">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-2.5 py-1 text-xs font-medium text-emerald-300">
+                    <Gauge size={13} />
+                    confidence {run.outcome.confidence.toFixed(2)}
+                  </span>
+                  {run.outcome.risk && (
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-2.5 py-1 text-xs font-medium text-emerald-300">
+                      <ShieldCheck size={13} />
+                      {run.outcome.risk} blast radius
+                    </span>
+                  )}
+                </div>
+              )}
+
+              <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-white/60">
+                <span>{run.meta}</span>
+                {run.outcome.prUrl && (
+                  <a
+                    href={run.outcome.prUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 font-medium text-emerald-300 hover:text-emerald-200"
+                  >
+                    {run.outcome.prLabel}
+                    <ExternalLink size={12} />
+                  </a>
+                )}
+                {run.diff && (
+                  <button
+                    onClick={() => setShowDiff((s) => !s)}
+                    className="inline-flex items-center gap-1 font-medium text-emerald-300 hover:text-emerald-200 cursor-pointer"
+                  >
+                    <Code2 size={13} />
+                    {showDiff ? "Hide the change" : "View the change"}
+                  </button>
+                )}
+              </div>
+
+              {showDiff && run.diff && <DiffView diff={run.diff} />}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+}
+
+export function MinionConsole() {
+  const [activeId, setActiveId] = useState(minionRuns[0].id);
+  const run = minionRuns.find((r) => r.id === activeId)!;
 
   return (
     <section id="minion" className="py-20">
@@ -110,109 +220,7 @@ export function MinionConsole() {
           ))}
         </div>
 
-        {/* console */}
-        <div className="rounded-2xl border border-border bg-background-alt/60 shadow-lg overflow-hidden">
-          {/* title bar */}
-          <div className="flex items-center gap-2 border-b border-border px-4 py-2.5">
-            <Bot size={16} className="text-primary" />
-            <span className="text-sm font-medium text-foreground">minion</span>
-            <span className="ml-auto flex gap-1.5">
-              <span className="h-2.5 w-2.5 rounded-full bg-border" />
-              <span className="h-2.5 w-2.5 rounded-full bg-border" />
-              <span className="h-2.5 w-2.5 rounded-full bg-border" />
-            </span>
-          </div>
-
-          <div className="p-4 sm:p-6">
-            {/* user prompt */}
-            <div className="flex justify-end mb-4">
-              <span className="rounded-2xl rounded-br-sm bg-primary px-4 py-2 text-sm text-white max-w-[85%]">
-                {run.prompt}
-              </span>
-            </div>
-
-            {/* streamed steps */}
-            <div className="font-mono text-[13px] leading-relaxed space-y-1 min-h-[160px]">
-              {run.steps.slice(0, revealed).map((step, i) => (
-                <motion.div
-                  key={`${activeId}-${i}`}
-                  initial={{ opacity: 0, y: 4 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="text-muted"
-                >
-                  <span className="text-primary">•</span> {step}
-                </motion.div>
-              ))}
-              {!done && (
-                <span className="inline-block h-4 w-2 animate-pulse bg-primary align-middle" />
-              )}
-            </div>
-
-            {/* outcome */}
-            <AnimatePresence>
-              {done && (
-                <motion.div
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className={cn("mt-5 rounded-xl border p-4", style.ring)}
-                >
-                  <div className="flex items-center gap-2">
-                    <span className={cn("rounded-full p-1", style.chip)}>
-                      <OutcomeIcon size={15} />
-                    </span>
-                    <span className={cn("font-semibold", style.text)}>
-                      {run.outcome.headline}
-                    </span>
-                  </div>
-                  <p className="mt-2 text-sm text-foreground/80">{run.outcome.reason}</p>
-
-                  {run.outcome.confidence != null && (
-                    <div className="mt-3 flex flex-wrap items-center gap-2">
-                      <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-2.5 py-1 text-xs font-medium text-emerald-300">
-                        <Gauge size={13} />
-                        confidence {run.outcome.confidence.toFixed(2)}
-                      </span>
-                      {run.outcome.risk && (
-                        <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-2.5 py-1 text-xs font-medium text-emerald-300">
-                          <ShieldCheck size={13} />
-                          {run.outcome.risk} blast radius
-                        </span>
-                      )}
-                    </div>
-                  )}
-
-                  <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-muted">
-                    <span>{run.meta}</span>
-                    {run.outcome.prUrl && (
-                      <a
-                        href={run.outcome.prUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 font-medium text-primary hover:text-primary-glow"
-                      >
-                        {run.outcome.prLabel}
-                        <ExternalLink size={12} />
-                      </a>
-                    )}
-                    {run.diff && (
-                      <button
-                        onClick={() => setShowDiff((s) => !s)}
-                        className="inline-flex items-center gap-1 font-medium text-primary hover:text-primary-glow cursor-pointer"
-                      >
-                        <Code2 size={13} />
-                        {showDiff ? "Hide the change" : "View the change"}
-                      </button>
-                    )}
-                  </div>
-
-                  {showDiff && run.diff && <DiffView diff={run.diff} />}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        </div>
+        <ConsolePlayer key={run.id} run={run} />
 
         <p className="mt-4 text-center text-xs text-muted">
           These are recorded runs of a real system. The full source, the

@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  /* Dark, premium theme (Linear/Vercel-style): near-black canvas, bright
-     indigo-to-violet accent. On a dark background, emphasis reads LIGHTER,
-     so primary-glow is a lighter indigo than primary. */
-  --background: #0a0b10;       /* near-black canvas */
-  --background-alt: #14161f;   /* elevated surface: cards and alternating sections */
-  --foreground: #eef0f6;       /* near-white, very readable */
-  --muted: #9198ab;            /* cool light-slate for secondary text */
-  --primary: #7c8cff;          /* bright indigo: links, buttons, icons */
-  --primary-glow: #a5b1ff;     /* lighter indigo for hover and emphasis */
-  --border: #23262f;           /* subtle dark border */
-  --accent: #b18bff;           /* violet for decorative gradients */
-  --accent-glow: #6d5bd0;      /* deep violet for glows and orbs */
+  /* Light, warm paper canvas with a single deep-green accent. On a light
+     background, emphasis reads DARKER, so primary-glow is a deeper green
+     than primary. */
+  --background: #f7f7f5;       /* warm paper canvas */
+  --background-alt: #ffffff;   /* raised surface: cards and alternating sections */
+  --foreground: #141414;       /* near-black ink, very readable */
+  --muted: #575754;            /* warm gray for secondary text, 7:1 on paper */
+  --primary: #0b6e4f;          /* deep green: links, buttons, icons */
+  --primary-glow: #09563e;     /* deeper green for hover and emphasis */
+  --border: #dcdcd7;           /* subtle warm border */
+  --accent: #12855f;           /* brighter green for decorative gradients */
+  --accent-glow: #bfe3d4;      /* soft green tint for background orbs */
 }
 
 @theme inline {
