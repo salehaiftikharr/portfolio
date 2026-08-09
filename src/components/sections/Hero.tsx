@@ -48,8 +48,12 @@ export function Hero() {
 
           {/* Ethos */}
           <motion.p {...fade(0.24)} className="text-muted text-lg max-w-2xl mb-9 leading-relaxed">
-            I care most about the part where they actually work: shipping software people can trust,
-            from autonomous coding agents that fix real tickets to production web apps.
+            I am happiest when I am deep in a problem I have not solved before.
+            These days that means building AI agents that do real jobs: minions
+            that fix live tickets and open pull requests only after the tests
+            pass, and Orion, the AI analyst at SuperOrgs, answering customer
+            questions in production. I design the systems, ship them, and keep
+            them running.
           </motion.p>
 
           {/* CTAs + socials */}
