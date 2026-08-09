@@ -10,7 +10,7 @@ export function Writing() {
   return (
     <section
       id="writing"
-      className="py-20 bg-gradient-to-b from-primary/[0.06] to-transparent border-y border-border/60"
+      className="py-20 bg-primary/[0.04] border-y border-border/60"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading

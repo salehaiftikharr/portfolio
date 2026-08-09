@@ -17,7 +17,7 @@ export function SectionHeading({ title, subtitle }: SectionHeadingProps) {
       className="mb-12 max-w-2xl"
     >
       <h2 className="flex items-center gap-3 text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-        <span className="inline-block h-7 w-1.5 rounded-full bg-gradient-to-b from-primary to-accent" />
+        <span className="inline-block h-7 w-1.5 rounded-full bg-primary" />
         {title}
       </h2>
       {subtitle && <p className="text-muted mt-4 text-lg leading-relaxed">{subtitle}</p>}

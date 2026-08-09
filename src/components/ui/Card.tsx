@@ -12,11 +12,9 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
       <div
         ref={ref}
         className={cn(
-          "relative rounded-xl p-[1px] shadow-lg shadow-primary/5",
-          gradient && "bg-gradient-to-br from-primary/20 via-border to-accent/20",
-          !gradient && "bg-border",
-          hover && "transition-all duration-300 hover:shadow-xl hover:shadow-primary/15 hover:-translate-y-1",
-          hover && gradient && "hover:from-primary/40 hover:to-accent/40"
+          "relative rounded-xl bg-border p-[1px] shadow-xs",
+          hover && "transition-all duration-300 hover:shadow-md hover:-translate-y-1",
+          hover && gradient && "hover:bg-primary/40"
         )}
         {...props}
       >

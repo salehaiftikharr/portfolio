@@ -87,7 +87,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             onExpand={(src) => setLightbox({ type: "image", src })}
           />
         ) : (
-          <div className="relative aspect-video mb-4 overflow-hidden rounded-lg border border-border bg-gradient-to-br from-primary/25 via-accent/10 to-background-alt">
+          <div className="relative aspect-video mb-4 overflow-hidden rounded-lg border border-border bg-primary/10">
             <div
               className="absolute inset-0 opacity-[0.12]"
               style={{

@@ -42,10 +42,8 @@ export function Hero() {
             className="text-2xl sm:text-3xl font-semibold tracking-tight mb-5"
           >
             Forward Deployed Engineer building{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              AI agents
-            </span>{" "}
-            and full-stack products.
+            <span className="text-primary">AI agents</span> and full-stack
+            products.
           </motion.p>
 
           {/* Ethos */}
