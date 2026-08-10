@@ -48,8 +48,8 @@ export function About() {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/profile.jpg"
-              alt="Saleha Iftikhar"
+              src="/profile-casual.jpg"
+              alt="Saleha Iftikhar on the wharf in Newport"
               className="w-44 md:w-52 aspect-[4/5] rounded-2xl object-cover object-top border border-border shadow-lg"
             />
           </motion.div>
