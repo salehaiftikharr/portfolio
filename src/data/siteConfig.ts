@@ -44,7 +44,7 @@ export const siteConfig: SiteConfig = {
       question: "What is your lifelong goal?",
       short: "Your lifelong goal?",
       answer:
-        "One day I want to open a shop that is equal parts coffee, flowers, and books, where young people in tech can come to work and collaborate. My college town gave me a coffee shop where I could thrive, and I want to build that corner for someone else. It would also bring together two of my oldest loves, baking and making a genuinely good cup of coffee. Tech first, though. The shop comes later.",
+        "There is a little shop on Lincoln Square in Gettysburg called Waldo's & Company. Pay-what-you-can coffee, art on every wall, always someone a few tables over making something. I did a lot of my best college work there, and probably a lot of my growing up too. My lifelong goal is to build my own version of it: part coffee shop, part flower shop, part bookstore, where young people in tech can park their laptops and build things next to each other. I ran a small baking business for years and I am very serious about coffee, so honestly the menu is already half planned. Tech first, though. The shop can wait its turn.",
     },
   ],
   email: "salehaiftikharrrr@gmail.com",
