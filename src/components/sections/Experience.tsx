@@ -58,6 +58,12 @@ export function Experience() {
                       </span>
                     </div>
 
+                    {exp.scope && (
+                      <p className="text-sm text-foreground/85 mb-3">
+                        {exp.scope}
+                      </p>
+                    )}
+
                     <ul className="space-y-2 mb-4">
                       {exp.description.map((item, i) => (
                         <li key={i} className="text-sm text-muted flex gap-2">

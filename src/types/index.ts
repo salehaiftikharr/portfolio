@@ -37,6 +37,8 @@ export interface Experience {
   location: string;
   duration: string;
   type: "work" | "education";
+  /** One-line scope of the role, shown above the bullets, mirroring the resume. */
+  scope?: string;
   description: string[];
   techStack?: string[];
 }

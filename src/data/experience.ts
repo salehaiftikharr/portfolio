@@ -8,6 +8,8 @@ export const experiences: Experience[] = [
     location: "Remote",
     duration: "Jun 2026 - Present",
     type: "work",
+    scope:
+      "Own AI agent features end to end, from scoping with customers through architecture, code review, and the launch post.",
     description: [
       "Built Orion, an AI assistant that answers plain-English questions about a team's people, agents, and spending, and scans their Slack, Asana, and Linear to suggest new agents worth building, each tied to the source behind it.",
       "Built connectors that find the AI agents a customer already runs on tools like Dust and Gumloop, map them onto the org chart, and pull in real cost data, plus an MCP server that gives Claude access to the same data.",
