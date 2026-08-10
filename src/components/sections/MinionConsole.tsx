@@ -229,7 +229,7 @@ export function MinionConsole() {
             href="https://github.com/salehaiftikharr/agent-forge"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary hover:text-primary-glow"
+            className="text-primary underline underline-offset-2 hover:text-primary-glow"
           >
             GitHub
           </a>
@@ -238,7 +238,7 @@ export function MinionConsole() {
             href="https://agent-forge-ochre-ten.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary hover:text-primary-glow"
+            className="text-primary underline underline-offset-2 hover:text-primary-glow"
           >
             try Forge live
           </a>

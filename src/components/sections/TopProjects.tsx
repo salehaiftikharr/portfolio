@@ -28,6 +28,7 @@ const slides = [
   {
     id: "saaya",
     title: "Saaya: Persistent AI Coworker",
+    status: "Live · gated demo",
     kicker: "An AI coworker, not a chatbot",
     image: "/saaya-workbench.png",
     imageAlt:
@@ -47,6 +48,7 @@ const slides = [
   {
     id: "forge-minions",
     title: "Forge & the Minions",
+    status: "Live",
     kicker: "Describe a specialist, forge it, put it to work",
     image: "/forge-live.png",
     imageAlt:
@@ -102,9 +104,18 @@ export function TopProjects() {
                     </button>
 
                     <div>
-                      <span className="inline-flex items-center gap-1 rounded-full border border-primary/25 bg-primary/10 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-primary">
-                        <Star size={11} className="fill-current" />
-                        Top project · {index + 1} of {slides.length}
+                      <span className="flex flex-wrap items-center gap-2">
+                        <span className="inline-flex items-center gap-1 rounded-full border border-primary/25 bg-primary/10 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-primary">
+                          <Star size={11} className="fill-current" />
+                          Top project · {index + 1} of {slides.length}
+                        </span>
+                        <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-2 py-0.5 text-[11px] font-medium text-muted">
+                          <span
+                            aria-hidden="true"
+                            className="h-1.5 w-1.5 rounded-full bg-primary"
+                          />
+                          {slide.status}
+                        </span>
                       </span>
                       <h3 className="mt-3 text-2xl font-bold text-foreground">
                         {slide.title}

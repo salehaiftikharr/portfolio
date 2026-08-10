@@ -6,6 +6,8 @@ export interface Project {
   featured: boolean;
   /** The two projects to show someone first; they lead the grid with a badge. */
   flagship?: boolean;
+  /** Honest deployment state shown on the card: what a visitor can actually reach. */
+  status?: "Live" | "Live · gated demo" | "Client production" | "Source available";
   description: string;
   longDescription: string;
   techStack: string[];

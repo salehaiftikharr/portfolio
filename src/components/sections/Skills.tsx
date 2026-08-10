@@ -21,8 +21,8 @@ export function Skills() {
     <section id="skills" className="py-20 bg-background-alt/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          title="Technical Skills"
-          subtitle="Technologies and tools I work with"
+          title="What I Work With"
+          subtitle="Grouped by what I use it for. Everything here is backed by a project or role on this page."
         />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

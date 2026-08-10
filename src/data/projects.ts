@@ -3,6 +3,7 @@ import { Project } from "@/types";
 export const projects: Project[] = [
   {
     id: "forge-minions",
+    status: "Live",
     title: "Forge & the Minions",
     role: "Creator",
     type: "personal",
@@ -38,6 +39,7 @@ export const projects: Project[] = [
   },
   {
     id: "saaya",
+    status: "Live · gated demo",
     title: "Saaya: Persistent AI Coworker",
     role: "Creator",
     type: "personal",
@@ -71,6 +73,7 @@ export const projects: Project[] = [
   },
   {
     id: "grounded",
+    status: "Live",
     title: "Grounded",
     role: "Creator",
     type: "personal",
@@ -107,6 +110,7 @@ export const projects: Project[] = [
   },
   {
     id: "analytics-chat-assistant",
+    status: "Source available",
     title: "Analytics Chat Assistant",
     role: "Creator",
     type: "personal",
@@ -139,6 +143,7 @@ export const projects: Project[] = [
   },
   {
     id: "application-tracker",
+    status: "Source available",
     title: "Application Tracker",
     role: "Creator",
     type: "personal",
@@ -166,6 +171,7 @@ export const projects: Project[] = [
   },
   {
     id: "impact-rehab",
+    status: "Client production",
     title: "Impact Rehab",
     role: "Team Lead & Developer",
     type: "academic",
@@ -196,6 +202,7 @@ export const projects: Project[] = [
   },
   {
     id: "eangus-directory",
+    status: "Client production",
     title: "EANGUS Leadership Directory",
     role: "Web Development Intern",
     type: "professional",
@@ -223,6 +230,7 @@ export const projects: Project[] = [
   },
   {
     id: "fuerza",
+    status: "Live",
     title: "Fuerza",
     role: "Full-Stack Developer",
     type: "academic",

@@ -13,7 +13,7 @@ export default function WorkPage() {
   return (
     <>
       <Header />
-      <main className="pt-16">
+      <main id="main" className="pt-16">
         <WorkArchive />
       </main>
       <Footer />

@@ -13,8 +13,8 @@ import {
   Brain,
   Chrome,
   FolderGit2,
+  Play,
   ShieldCheck,
-  Maximize2,
   Star,
   type LucideIcon,
 } from "lucide-react";
@@ -23,6 +23,7 @@ import { Badge } from "./Badge";
 import { ImageCarousel } from "./ImageCarousel";
 import { Lightbox, type LightboxMedia } from "./Lightbox";
 import { Project } from "@/types";
+import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
 interface ProjectCardProps {
@@ -60,27 +61,31 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       className="group scroll-mt-24"
     >
       <Card gradient className="h-full flex flex-col">
-        {/* Cover: demo video, then screenshot carousel, then themed gradient art */}
+        {/* Cover: demo poster with a play affordance, then screenshot
+            carousel, then themed art. The video itself only loads inside the
+            lightbox, so the gallery never autoplays or downloads media the
+            visitor did not ask for. */}
         {hasVideo ? (
           <button
             type="button"
             onClick={() => setLightbox({ type: "video", src: project.video!, poster: project.poster })}
-            aria-label={`Expand ${project.title} demo`}
-            className="group/media relative mb-4 block w-full cursor-zoom-in overflow-hidden rounded-lg border border-border bg-background-alt"
+            aria-label={`Play the ${project.title} demo video`}
+            className="group/media relative mb-4 block w-full cursor-pointer overflow-hidden rounded-lg border border-border bg-background-alt"
           >
-            <video
-              src={project.video}
-              poster={project.poster}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              aria-label={`${project.title} demo`}
-              className="pointer-events-none w-full aspect-video object-contain"
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={project.poster}
+              alt={`${project.title} demo preview`}
+              loading="lazy"
+              className="w-full aspect-video object-cover"
             />
-            <span className="absolute bottom-2 right-2 flex items-center gap-1 rounded-md bg-black/60 px-2 py-1 text-[10px] font-medium text-white opacity-0 transition-opacity group-hover/media:opacity-100">
-              <Maximize2 size={12} /> Click to enlarge
+            <span className="absolute inset-0 flex items-center justify-center">
+              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-black/55 text-white transition-transform group-hover/media:scale-110">
+                <Play size={20} className="ml-0.5 fill-current" />
+              </span>
+            </span>
+            <span className="absolute bottom-2 right-2 rounded-md bg-black/60 px-2 py-1 text-[10px] font-medium text-white">
+              Watch demo
             </span>
           </button>
         ) : hasImages ? (
@@ -180,7 +185,26 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
 
         {/* Links */}
-        <div className="mt-auto flex items-center gap-3 pt-4 border-t border-border">
+        <div className="mt-auto flex flex-wrap items-center gap-x-3 gap-y-2 pt-4 border-t border-border">
+          {project.status && (
+            <span
+              className={cn(
+                "inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 text-[11px] font-medium",
+                project.status.startsWith("Live")
+                  ? "bg-primary/10 text-primary"
+                  : "bg-background text-muted border border-border",
+              )}
+            >
+              <span
+                aria-hidden="true"
+                className={cn(
+                  "h-1.5 w-1.5 rounded-full",
+                  project.status.startsWith("Live") ? "bg-primary" : "bg-muted/60",
+                )}
+              />
+              {project.status}
+            </span>
+          )}
           {project.links.github && (
             <a
               href={project.links.github}

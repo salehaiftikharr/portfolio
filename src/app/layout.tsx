@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter, Geist_Mono } from "next/font/google";
 import { AnimatedBackground } from "@/components/ui/AnimatedBackground";
+import { MotionProvider } from "@/components/ui/MotionProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -21,9 +22,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://saleha.live"),
+  alternates: { canonical: "/" },
   title: "Saleha Iftikhar | Forward Deployed Engineer",
   description:
-    "Forward deployed engineer at SuperOrgs and AI-native builder, a recent Computer Science graduate from Gettysburg College. I build autonomous agents and full-stack products, from a fleet of \"minions\" that open verified pull requests to chat-native business intelligence tools.",
+    "Forward deployed engineer at SuperOrgs building AI agents that do real work: Saaya, a persistent AI coworker with approval gates and durable jobs, and Forge, whose autonomous minions open verified pull requests. I design the systems, ship them, and keep them running in production.",
   keywords: [
     "AI engineer",
     "AI agents",
@@ -61,6 +63,10 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport = {
+  themeColor: "#f7f7f5",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -92,8 +98,14 @@ export default function RootLayout({
             }),
           }}
         />
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white"
+        >
+          Skip to content
+        </a>
         <AnimatedBackground />
-        {children}
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );

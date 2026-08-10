@@ -17,7 +17,7 @@ export default function Home() {
     <>
       <ScrollProgress />
       <Header />
-      <main>
+      <main id="main">
         <Hero />
         <About />
         <TopProjects />
