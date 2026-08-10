@@ -3,8 +3,8 @@ import { Footer } from "@/components/layout/Footer";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
+import { TopProjects } from "@/components/sections/TopProjects";
 import { Writing } from "@/components/sections/Writing";
-import { Projects } from "@/components/sections/Projects";
 import { MinionConsole } from "@/components/sections/MinionConsole";
 import { DataViz } from "@/components/sections/DataViz";
 import { Skills } from "@/components/sections/Skills";
@@ -20,9 +20,9 @@ export default function Home() {
       <main>
         <Hero />
         <About />
+        <TopProjects />
         <Writing />
         <MinionConsole />
-        <Projects />
         <DataViz />
         <Skills />
         <Experience />

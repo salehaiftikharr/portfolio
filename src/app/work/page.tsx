@@ -4,9 +4,9 @@ import { Footer } from "@/components/layout/Footer";
 import { WorkArchive } from "@/components/sections/WorkArchive";
 
 export const metadata: Metadata = {
-  title: "Work | Saleha Iftikhar",
+  title: "Project Gallery | Saleha Iftikhar",
   description:
-    "The full project archive: agent systems, retrieval Q&A, chat-native business intelligence, and production client work.",
+    "The full project gallery: agent systems, retrieval Q&A, chat-native business intelligence, and production client work.",
 };
 
 export default function WorkPage() {

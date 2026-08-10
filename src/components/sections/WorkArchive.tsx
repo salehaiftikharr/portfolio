@@ -18,7 +18,7 @@ export function WorkArchive() {
           Back home
         </Link>
         <SectionHeading
-          title="Project Archive"
+          title="Project Gallery"
           subtitle="Everything I have built, from production agent systems to the class projects that started it all"
         />
 
