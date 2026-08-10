@@ -40,6 +40,16 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Display face for the hero name and section headings: a serif with real
+   character, set wide-nib and wonky so it reads editorial rather than
+   template. Everything else stays on the sans. */
+.font-display {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 600;
+  font-variation-settings: "opsz" 9, "WONK" 1;
+  letter-spacing: -0.015em;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

@@ -12,28 +12,39 @@ export const siteConfig: SiteConfig = {
   faqs: [
     {
       question: "What keeps you up at night these days?",
+      short: "What keeps you up at night?",
       answer:
         "My minions. I am building a fleet of little AI agents that pick up small, repetitive tasks, fix them, prove the fix with tests, and open a pull request, all on their own. The dream is simple: my minions and I become best friends. They take the busywork so I can put my full attention on the bigger, harder problems.",
     },
     {
       question: "So what do you actually build?",
+      short: "What do you build?",
       answer:
         "AI agents that do real work, and the full-stack products around them. Lately that has meant autonomous coding agents, a chat-native business intelligence tool, and a job-application tracker. I care about software that genuinely helps people, built with enough rigor that you can actually trust it.",
     },
     {
       question: "Why agents, and why now?",
+      short: "Why agents?",
       answer:
         "Because for the first time software can take initiative instead of waiting for a click. That genuinely thrills me, and I will happily explain to anyone who will listen why agents are the most exciting thing in tech right now.",
     },
     {
       question: "Where did all of this start?",
+      short: "Where did it start?",
       answer:
         "At Gettysburg College, where I just finished a Computer Science degree with minors in Data Science and Mathematics. Somewhere between the coursework and a pile of side projects, I realized I liked building the tools more than almost anything else.",
     },
     {
       question: "What are you doing when you are not coding?",
+      short: "Outside of code?",
       answer:
         "You will find me lifting at the gym or deep in a new baking recipe. I ran a small baking business for a few years, so I take a good crumb very seriously.",
+    },
+    {
+      question: "What is your lifelong goal?",
+      short: "Your lifelong goal?",
+      answer:
+        "One day I want to open a shop that is equal parts coffee, flowers, and books, where young people in tech can come to work and collaborate. My college town gave me a coffee shop where I could thrive, and I want to build that corner for someone else. It would also bring together two of my oldest loves, baking and making a genuinely good cup of coffee. Tech first, though. The shop comes later.",
     },
   ],
   email: "salehaiftikharrrr@gmail.com",

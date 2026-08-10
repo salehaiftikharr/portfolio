@@ -55,8 +55,9 @@ export interface SiteConfig {
   description: string;
   /** Longer, personable bio for the About section, one entry per paragraph. */
   about: string[];
-  /** Conversational "Ask Me Anything" pairs for the About section. */
-  faqs: { question: string; answer: string }[];
+  /** Conversational "Ask Me Anything" pairs for the About section. The
+      short label sits on the picker chip; the full question tops the card. */
+  faqs: { question: string; short: string; answer: string }[];
   email: string;
   phone?: string;
   location: string;

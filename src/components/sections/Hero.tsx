@@ -31,7 +31,7 @@ export function Hero() {
           {/* Name */}
           <motion.h1
             {...fade(0.08)}
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-5"
+            className="font-display text-5xl sm:text-6xl lg:text-7xl text-foreground mb-5"
           >
             Saleha Iftikhar
           </motion.h1>

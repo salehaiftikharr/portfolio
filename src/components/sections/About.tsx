@@ -16,7 +16,7 @@ import {
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { FaqAccordion } from "@/components/ui/FaqAccordion";
+import { AmaChips } from "@/components/ui/AmaChips";
 import { education, siteConfig } from "@/data/siteConfig";
 
 // A distinct icon per honor keeps the grid lively instead of a wall of bullets.
@@ -35,7 +35,7 @@ export function About() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Ask Me Anything"
-          subtitle="The questions I get most, answered honestly"
+          subtitle="The conversation we would have over coffee"
         />
 
         <div className="flex flex-col items-center gap-10 md:flex-row md:items-start max-w-5xl mx-auto mb-14">
@@ -60,7 +60,7 @@ export function About() {
             viewport={{ once: true }}
             className="w-full flex-1"
           >
-            <FaqAccordion items={siteConfig.faqs} />
+            <AmaChips items={siteConfig.faqs} />
           </motion.div>
         </div>
 
