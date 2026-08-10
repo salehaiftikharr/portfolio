@@ -74,7 +74,7 @@ export function TopProjects() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="My Top Projects"
-          subtitle="The two I would show you first, both running live. Flip through, then browse the gallery for the rest."
+          subtitle="Saaya and Forge, the two I am proudest of. Both are live right now."
         />
 
         <Carousel>
