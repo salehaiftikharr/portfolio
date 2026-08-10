@@ -5,6 +5,7 @@ import {
   GraduationCap,
   Award,
   BookOpen,
+  ExternalLink,
   Trophy,
   Users,
   Sparkles,
@@ -117,7 +118,7 @@ export function About() {
                 return (
                   <div
                     key={award.name}
-                    className="rounded-xl border border-border bg-background-alt p-4 h-full transition-colors hover:border-primary/40"
+                    className="group/award rounded-xl border border-border bg-background-alt p-4 h-full transition-colors hover:border-primary/40"
                   >
                     <div className="flex items-start gap-2.5">
                       <div className="mt-0.5 p-1.5 rounded-md bg-primary/10 shrink-0">
@@ -126,7 +127,23 @@ export function About() {
                       <div>
                         <div className="flex items-baseline gap-2 flex-wrap">
                           <h4 className="font-medium text-foreground leading-snug">
-                            {award.name}
+                            {award.link ? (
+                              <a
+                                href={award.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1 transition-colors hover:text-primary"
+                              >
+                                {award.name}
+                                <ExternalLink
+                                  size={12}
+                                  className="text-muted opacity-0 transition-opacity group-hover/award:opacity-100"
+                                  aria-hidden="true"
+                                />
+                              </a>
+                            ) : (
+                              award.name
+                            )}
                           </h4>
                           {term && (
                             <span className="text-[11px] uppercase tracking-wide text-muted">

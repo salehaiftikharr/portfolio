@@ -64,31 +64,37 @@ export const education = {
   awards: [
     {
       name: "Eisenhower Scholar",
+      link: "https://www.gettysburg.edu/admissions-aid/financial-aid-options/eisenhower-scholarship",
       description:
         "Gettysburg College's most selective merit award, for outstanding leadership, civic engagement, and community impact.",
     },
     {
       name: "Keith Pappas Memorial Award",
       term: "Fall 2025",
+      link: "https://www.gettysburg.edu/offices/student-rights-responsibilities/student-life-committee/slc-fall-awards-nomination-form",
       description:
         "Given to the student whose participation and contributions most shape the life of the College community.",
     },
     {
       name: "Linnaean Award",
       term: "Spring 2026",
+      link: "https://www.gettysburg.edu/alumni/alumni-awards/linnaean-award",
       description:
         "Honors an outstanding senior for academic excellence and efforts to improve the campus community.",
     },
     {
       name: "Dean's Honors List",
+      link: "https://www.gettysburg.edu/offices/student-rights-responsibilities/student-handbook/policy-details?id=1e5dc270-04e7-428d-a62d-78407e2eeaf9",
       description: "Semester standing for a grade point average of 3.60 or higher.",
     },
     {
       name: "Dean's Commendation List",
+      link: "https://www.gettysburg.edu/offices/student-rights-responsibilities/student-handbook/policy-details?id=1e5dc270-04e7-428d-a62d-78407e2eeaf9",
       description: "Semester standing for a grade point average between 3.30 and 3.59.",
     },
     {
       name: "Pi Mu Epsilon",
+      link: "https://pme-math.org/",
       description:
         "Invitation-only membership in the national mathematics honor society for excellence in mathematics.",
     },
