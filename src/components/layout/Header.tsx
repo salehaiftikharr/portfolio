@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -66,12 +67,13 @@ export function Header() {
     >
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <a
-            href="#"
-            className="text-xl font-bold text-foreground hover:text-primary transition-colors"
+          <Link
+            href="/"
+            aria-label="Saleha Iftikhar, home"
+            className="font-display text-xl text-foreground hover:text-primary transition-colors"
           >
-            SI
-          </a>
+            Saleha<span className="text-primary">.</span>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
