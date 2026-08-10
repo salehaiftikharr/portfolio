@@ -4,6 +4,8 @@ export interface Project {
   role: string;
   type: "professional" | "academic" | "personal";
   featured: boolean;
+  /** The two projects to show someone first; they lead the grid with a badge. */
+  flagship?: boolean;
   description: string;
   longDescription: string;
   techStack: string[];

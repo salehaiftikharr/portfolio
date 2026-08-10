@@ -14,7 +14,7 @@ export function Projects() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Featured Projects"
-          subtitle="A selection of projects I have built, from production apps to academic work"
+          subtitle="Forge and Saaya lead: the two I would show you first, both running live. The archive has the rest."
         />
 
         <div className="grid md:grid-cols-2 gap-6">

@@ -10,10 +10,12 @@ import {
   Users,
   Bot,
   BarChart3,
+  Brain,
   Chrome,
   FolderGit2,
   ShieldCheck,
   Maximize2,
+  Star,
   type LucideIcon,
 } from "lucide-react";
 import { Card } from "./Card";
@@ -32,6 +34,7 @@ interface ProjectCardProps {
 // intentional rather than empty.
 const coverIcon: Record<string, LucideIcon> = {
   "forge-minions": Bot,
+  "saaya": Brain,
   "grounded": ShieldCheck,
   "analytics-chat-assistant": BarChart3,
   "application-tracker": Chrome,
@@ -110,6 +113,12 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         )}
 
         {/* Header */}
+        {project.flagship && (
+          <span className="mb-2 inline-flex items-center gap-1 self-start rounded-full border border-primary/25 bg-primary/10 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-primary">
+            <Star size={11} className="fill-current" />
+            Top project
+          </span>
+        )}
         <div className="flex items-start justify-between gap-2 mb-2">
           <h3 className="text-lg font-semibold text-foreground group-hover:text-primary-glow transition-colors">
             {project.title}

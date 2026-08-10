@@ -233,6 +233,15 @@ export function MinionConsole() {
           >
             GitHub
           </a>
+          , or{" "}
+          <a
+            href="https://agent-forge-ochre-ten.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:text-primary-glow"
+          >
+            try Forge live
+          </a>
           .
         </p>
       </div>

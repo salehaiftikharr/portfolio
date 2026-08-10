@@ -7,6 +7,7 @@ export const projects: Project[] = [
     role: "Creator",
     type: "personal",
     featured: true,
+    flagship: true,
     description:
       'An agent that builds agents, plus a fleet of autonomous "minions" that fix GitHub and Linear issues and open verified pull requests, dispatched from Slack.',
     longDescription:
@@ -29,10 +30,44 @@ export const projects: Project[] = [
     ],
     links: {
       github: "https://github.com/salehaiftikharr/agent-forge",
+      live: "https://agent-forge-ochre-ten.vercel.app",
     },
     video: "/minion-demo.mp4",
     poster: "/minion-demo-poster.jpg",
-    duration: "Jun 2026",
+    duration: "Jun 2026 - Present",
+  },
+  {
+    id: "saaya",
+    title: "Saaya: Persistent AI Coworker",
+    role: "Creator",
+    type: "personal",
+    featured: true,
+    flagship: true,
+    description:
+      "A persistent AI coworker with durable jobs that survive crashes, approval gates that genuinely block risky commands, and long-term memory it can cite and version, reachable from web, Slack, and MCP.",
+    longDescription:
+      "Saaya is built on LangChain Deep Agents and LangGraph as a coworker rather than a chatbot: you hand it real jobs and it keeps them alive across crashes and restarts. Risky commands stop at approval gates that genuinely block until a human signs off, and its long-term memory carries provenance and versioning, so you can see where a fact came from and how it has changed. The same coworker is reachable from the web app, Slack, and MCP, built with Python, FastAPI, Next.js, and Postgres with pgvector. The live demo is passphrase-gated to keep model costs sane; ask me for the key.",
+    techStack: [
+      "Python",
+      "FastAPI",
+      "Next.js",
+      "LangGraph",
+      "LangChain Deep Agents",
+      "Postgres",
+      "pgvector",
+    ],
+    highlights: [
+      "Durable jobs that survive crashes and restarts",
+      "Approval gates that genuinely block risky commands",
+      "Long-term memory with provenance and versioning",
+      "One coworker across web, Slack, and MCP",
+    ],
+    links: {
+      github: "https://github.com/salehaiftikharr/saaya",
+      live: "https://saaya-orcin.vercel.app",
+    },
+    images: ["/saaya-workbench.png"],
+    duration: "Aug 2026 - Present",
   },
   {
     id: "grounded",
